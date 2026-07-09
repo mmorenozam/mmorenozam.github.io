@@ -3,6 +3,7 @@ project:
 
 website:
   title: "mauricio-moreno.net"
+  site-url: https://mauricio-moreno.net
   navbar:
     left:
       - href: index.qmd
