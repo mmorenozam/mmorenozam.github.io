@@ -1,5 +1,5 @@
 ---
-title: "mauricio-moreno.net"
+title: "Mauricio Moreno, PhD"
 ---
 
 This is a Quarto website.
