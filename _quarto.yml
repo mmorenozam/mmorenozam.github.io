@@ -15,7 +15,7 @@ website:
         text: Home
       - about.qmd
       - text: Publications
-      - href: publications.qmd
+        href: publications.qmd
       
 format:
   html:
