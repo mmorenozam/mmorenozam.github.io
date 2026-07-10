@@ -1,15 +1,22 @@
 project:
   type: website
 
+description-meta: "Quarto Website adapted by Mauricio Moreno, PhD"
+author-meta: "Mauricio Moreno, PhD"
+
 website:
-  title: "mauricio-moreno.net"
+  title: "Mauricio Moreno"
+  image: files/images/icon1_nb.png
+  favicon: files/images/icon1_nb.png
   site-url: https://mauricio-moreno.net
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
-
+      - text: Publications
+      - href: publications.qmd
+      
 format:
   html:
     theme:
