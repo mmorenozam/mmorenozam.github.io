@@ -1,0 +1,29 @@
+---
+title: "Privacy Policy"
+---
+
+## General information
+
+This website is a personal professional portfolio website.
+
+No personal data is collected directly through forms or user accounts.
+
+## Hosting
+
+This website is hosted through GitHub Pages.
+
+GitHub may process technical information such as IP addresses and server logs as part of providing the hosting service.
+
+## External links
+
+This website contains links to external websites, including LinkedIn and Google Scholar.
+
+When visiting external websites, their respective privacy policies apply.
+
+## Cookies
+
+This website does not use tracking cookies, analytics services, or advertising technologies.
+
+## Contact
+
+If you contact me via email, the information you provide will only be used to respond to your request.

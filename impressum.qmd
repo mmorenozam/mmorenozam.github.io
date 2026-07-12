@@ -1,0 +1,26 @@
+---
+title: "Impressum"
+---
+
+## Information according to § 5 DDG
+
+Responsible for the content of this website:
+
+**Mauricio Moreno**
+
+40215
+Germany
+
+## Contact
+
+Email: mauriciomoreno@example.com
+
+## Disclaimer
+
+The contents of this website have been created with care. However, no guarantee is given regarding the accuracy, completeness, or currentness of the information provided.
+
+## Copyright
+
+Unless otherwise stated, all content on this website is protected by copyright.
+Please contact me before reproducing or using any materials beyond personal use.
+
