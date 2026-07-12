@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "index.html#research-interests",
+    "href": "index.html#research-interests",
     "title": "Mauricio Moreno, PhD",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "section": "Research Interests",
+    "text": "Research Interests\n\nBayesian Statistics\nStatistical Modeling\nKinetic Modeling\nClinical Research\nEnvironmental Statistics\nData Science"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Mauricio Moreno, PhD",
+    "section": "Education",
+    "text": "Education\nPhD in Bioinformatics, 2021 Jacobs University Bremen · Germany\nMSc in Statistics, 2015 KU Leuven · Belgium\nBSc in Biotechnology, 2010 Escuela Politécnica del Ejército · Ecuador"
   },
   {
     "objectID": "about.html",
