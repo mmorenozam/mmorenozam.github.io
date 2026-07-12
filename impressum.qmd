@@ -1,5 +1,7 @@
 ---
 title: "Impressum"
+page-navigation: false
+toc: false
 ---
 
 ## Information according to § 5 DDG
@@ -13,7 +15,7 @@ Germany
 
 ## Contact
 
-Email: mauriciomoreno@example.com
+Email: mmorenozambrano@gmail.com
 
 ## Disclaimer
 

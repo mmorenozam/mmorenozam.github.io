@@ -1,0 +1,14 @@
+---
+title: "Projects"
+listing:
+  contents: projects
+    # - "projects/*/*.qmd"
+  type: grid
+  sort: "date asc"
+  sort-ui: true
+  filter-ui: false
+  categories: false
+  image-height: "200px"
+  fields: [image, title, description]
+page-layout: full
+---
