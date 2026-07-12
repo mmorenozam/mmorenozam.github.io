@@ -1,1 +1,36 @@
 /* css styles */
+.quarto-about-trestles{
+	max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 5rem !important;
+}
+
+/* Contenedor general de las secciones */
+.profile-section {
+  max-width: 950px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+/* Columnas */
+.profile-section .columns {
+  align-items: flex-start;
+}
+
+/* Títulos */
+.profile-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Listas */
+.profile-section ul {
+  padding-left: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Educación */
+.education-item {
+  margin-bottom: 1.5rem;
+}

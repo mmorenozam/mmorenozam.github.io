@@ -1,11 +1,84 @@
 ---
 title: "Mauricio Moreno, PhD"
+pagetitle: "Mauricio Moreno Website"
+image: "files/images/me.png"
+page-navigation: false
+toc: false
+format: html
+page-layout: custom
+about: 
+  id: hero-heading
+  template: trestles
+  image-width: 300px
+  image-shape: round
+  links:
+    - icon: envelope
+      href: mailto:mmorenozambrano@gmail.com    
+    - icon: linkedin
+      href: https://www.linkedin.com/in/mmorenozam/
+      target: _blank
+    - icon: mortarboard-fill
+      href: https://scholar.google.com/citations?user=i_wIXdEAAAAJ&hl=en
+      target: _blank
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+:::{#hero-heading}
 
-```{r}
-1 + 1
-```
+
+**Welcome!**
+
+Hi, and welcome to my personal website.
+
+I'm a **Biostatistician and Data Scientist** with over ten years of experience applying statistical methods to real-world scientific problems in both academic research and industry. My work spans experimental design, statistical modeling, Bayesian methods, simulation, and reproducible data analysis, with a particular focus on translating complex data into clear, actionable insights.
+
+Currently, I work at Bayer Crop Science, where I support research and development projects through study design, statistical analysis, and collaboration with multidisciplinary teams. Alongside my professional work, I have a strong interest in clinical research, statistical consulting, and the development of robust analytical workflows in R and SAS.
+
+This website serves as a portfolio of my professional work, publications, technical projects, and educational activities. Whether you're a recruiter, collaborator, or fellow data enthusiast, I hope you find something useful here. Thanks for stopping by!
+
+
+
+:::
+
+<div class="profile-section">
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+## Research Interests
+
+- Bayesian Statistics
+- Statistical Modeling
+- Kinetic Modeling
+- Clinical Research
+- Environmental Statistics
+- Data Science
+
+:::
+
+::: {.column width="50%"}
+
+
+## Education
+
+
+**PhD in Bioinformatics**, 2021
+**Jacobs University Bremen** · Germany
+
+
+
+**MSc in Statistics**, 2015
+**KU Leuven** · Belgium
+
+
+
+**BSc in Biotechnology**, 2010
+**Escuela Politécnica del Ejército** · Ecuador
+
+
+:::
+
+:::
+
+</div>

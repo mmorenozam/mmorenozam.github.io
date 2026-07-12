@@ -15,15 +15,37 @@ website:
         text: Home
       - about.qmd
       - text: Publications
+        
         href: publications.qmd
-      
+    right: 
+      - icon: github
+        href: https://github.com/mmorenozam
+        target: _blank
+  page-navigation: true
+  
+  page-footer:
+    left: "[Mauricio Moreno](http://www.github.com) &copy; <script>document.write(new Date().getFullYear())</script>"
+    right: "Created in Quarto"
+
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
+    theme: 
+      dark: darkly
+      light: flatly
+    css: 
+      - styles.css
     toc: true
+    extensions:
+      - banner-override
+
+freeze: auto
+# format:
+#   html:
+#     theme:
+#       - cosmo
+#       - brand
+#     css: styles.css
+#     toc: true
 
 
 
