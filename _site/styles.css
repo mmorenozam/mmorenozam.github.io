@@ -48,3 +48,269 @@
   }
 
 }
+
+/* =====================================================
+   EXPERIENCE TIMELINE
+   ===================================================== */
+
+.experience-section {
+
+  max-width: 1000px;
+
+  margin: 5rem auto;
+
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+
+  gap: 3rem;
+
+}
+
+
+/* Título Experience */
+
+.experience-title h2 {
+
+  margin-top: 0;
+
+  position: sticky;
+
+  top: 100px;
+
+}
+
+
+/* Contenedor del timeline */
+
+.timeline {
+
+  position: relative;
+
+  padding-left: 3rem;
+
+}
+
+
+/* Cada experiencia */
+
+.timeline-item {
+
+  position: relative;
+
+  padding-bottom: 3rem;
+
+}
+
+
+/* Segmento de línea entre experiencias */
+
+.timeline-item::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: -2rem;
+
+  top: 1.15rem;
+
+  bottom: -0.2rem;
+
+  width: 2px;
+
+  background: currentColor;
+
+  opacity: 0.2;
+
+}
+
+
+/* Último elemento sin línea abajo */
+
+.timeline-item:last-child::before {
+
+  display: none;
+
+}
+
+
+/* Círculo */
+
+.timeline-marker {
+
+  position: absolute;
+
+  left: -2.48rem;
+
+  top: 0.95rem;
+
+
+  width: 16px;
+
+  height: 16px;
+
+
+  border-radius: 50%;
+
+
+  border: 3px solid currentColor;
+
+
+  background: var(--bs-body-bg);
+
+
+  z-index: 2;
+
+}
+
+
+/* Experiencia actual */
+
+.timeline-item.current .timeline-marker {
+
+  background: currentColor;
+
+}
+
+
+
+/* Caja de contenido */
+
+.timeline-content {
+
+  padding-left: 0.5rem;
+
+}
+
+
+/* Nombre del rol */
+
+.timeline-content h3 {
+
+  margin-top: 0;
+
+  margin-bottom: .3rem;
+
+  font-size: 1.25rem;
+
+}
+
+
+/* Empresa */
+
+.company {
+
+  display: block;
+
+  font-weight: 600;
+
+  color: #4da3ff;
+
+  margin-bottom: .3rem;
+
+}
+
+
+/* Empresa en modo claro */
+
+[data-bs-theme="light"] .company {
+
+  color: #7c3aed;
+
+}
+
+
+/* Fecha + ubicación */
+
+.metadata {
+
+  display: block;
+
+  font-size: .9rem;
+
+  opacity: .7;
+
+  margin-bottom: 1rem;
+
+}
+
+
+/* Lista */
+
+.timeline-content ul {
+
+  margin-top: .5rem;
+
+  padding-left: 1.2rem;
+
+  line-height: 1.7;
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+
+  .experience-section {
+
+
+    display: block;
+
+
+    margin: 3rem 1rem;
+
+
+  }
+
+
+
+  .experience-title h2 {
+
+
+    position: static;
+
+
+    margin-bottom: 2rem;
+
+
+  }
+
+
+
+  .timeline {
+
+
+    padding-left: 2.5rem;
+
+
+  }
+
+
+
+  .timeline-item {
+
+
+    padding-bottom: 2.5rem;
+
+
+  }
+
+
+
+  .timeline-marker {
+
+
+    left: -2rem;
+
+
+  }
+
+
+
+}
