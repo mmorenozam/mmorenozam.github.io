@@ -34,3 +34,17 @@
 .education-item {
   margin-bottom: 1.5rem;
 }
+
+/* Celulares */
+@media (max-width: 768px) {
+
+  .profile-section .columns {
+    display: block;
+  }
+
+  .profile-section .column {
+    width: 100% !important;
+    margin-bottom: 2rem;
+  }
+
+}
