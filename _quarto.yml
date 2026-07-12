@@ -13,10 +13,11 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - text: Publications
-        
-        href: publications.qmd
+      - text: Research
+        href: research.qmd
+      - href: files/moreno_cv.pdf
+        text: CV
+        target: _blank
     right: 
       - icon: github
         href: https://github.com/mmorenozam
@@ -24,9 +25,10 @@ website:
   page-navigation: true
   
   page-footer:
-    left: "[Mauricio Moreno](http://www.github.com) &copy; <script>document.write(new Date().getFullYear())</script>"
+    left: "[Mauricio Moreno](https://github.com) &copy; <script>document.write(new Date().getFullYear())</script>"
+    center: center: "[Impressum](impressum.qmd) | [Privacy](privacy.qmd)"
     right: "Created in Quarto"
-
+    
 format:
   html:
     theme: 

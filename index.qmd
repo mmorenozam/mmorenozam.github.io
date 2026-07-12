@@ -157,10 +157,9 @@ Bayer Crop Science
 Jun 2022 - Present · Monheim am Rhein, Germany
 </span>
 
-- Provide statistical expertise for regulated R\&D projects, supporting study design, analysis planning, data analysis, and interpretation of results in cross-functional teams.
-- Design and optimize studies through simulation-based approaches, including power analysis and model-based evaluation of design assumptions, supporting robust and efficient decision-making.
-- Lead cross-functional statistical discussions, translating scientific questions into statistical methodologies and communicating results to support strategic decisions.
-- Contribute to standardization of statistical processes and quality standards across projects, including oversight of outsourced analytical work.
+- Statistical support for R\&D projects across the study lifecycle.
+- Experimental design, simulation-based power analysis, and statistical modelling.
+- Collaboration with multidisciplinary teams to translate scientific questions into analytical strategies.
 
 </div>
 
@@ -183,9 +182,9 @@ Research Institute for Farm Animal Biology
 Oct 2021 - Mar 2022 · Dummerstorf, Germany
 </span>
 
-- Provided statistical consulting to researchers, supporting study design, analysis planning, and interpretation of results.
-- Applied advanced statistical methods (e.g., GLMMs, simulations) to ensure robust and reproducible analyses.
-- Communicated statistical results to non-statistical collaborators, supporting evidence-based decision making.
+- Provided statistical consulting to researchers, study design, analysis planning, and interpretation of results.
+- Applied advanced statistical methods to ensure robust and reproducible analyses.
+- Communicated statistical results to non-statistical collaborators.
 
 </div>
 
@@ -208,8 +207,8 @@ Jacobs University Bremen
 Feb 2016 - Aug 2021 · Bremen, Germany
 </span>
 
-- Developed and applied advanced statistical and Bayesian models to complex biological systems, including parameter estimation, uncertainty quantificaction, and model validation.
-- Designed reproducible analytical workflows using R and Stan, ensuring transparency and traceatility of results.
+- Developed statistical and Bayesian models to complex biological systems.
+- Designed reproducible analytical workflows using R and Stan.
 - Collaborated with experimental scientists to translate biological hypothesis into quantitative frameworks and statistical analyses (e.g., PCA, ANOVA, GLMM).
 
 </div>
@@ -222,4 +221,27 @@ Feb 2016 - Aug 2021 · Bremen, Germany
 </div>
 
 
+<div class="contact-section">
 
+## Let's connect
+
+I'm always interested in discussing statistical modelling,
+data science, research collaborations, and teaching opportunities.
+
+<div class="contact-links">
+
+<a href="mailto:mmorenozambrano@gmail.com">
+✉️ Email
+</a>
+
+<a href="https://www.linkedin.com/in/mmorenozam/" target="_blank">
+💼 LinkedIn
+</a>
+
+<a href="https://scholar.google.com/citations?user=i_wIXdEAAAAJ&hl=en" target="_blank">
+🎓 Google Scholar
+</a>
+
+</div>
+
+</div>

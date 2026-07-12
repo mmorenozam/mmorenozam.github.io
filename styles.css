@@ -314,3 +314,37 @@
 
 
 }
+
+.contact-section {
+
+  max-width: 800px;
+
+  margin: 5rem auto 3rem;
+
+  text-align: center;
+
+}
+
+
+.contact-links {
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:2rem;
+
+  margin-top:2rem;
+
+  flex-wrap:wrap;
+
+}
+
+
+.contact-links a {
+
+  text-decoration:none;
+
+  font-weight:600;
+
+}
