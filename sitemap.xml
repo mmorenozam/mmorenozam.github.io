@@ -1,23 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mauricio-moreno.net/research.html</loc>
-    <lastmod>2026-07-12T13:20:50.282Z</lastmod>
+    <loc>https://mauricio-moreno.net/index.html</loc>
+    <lastmod>2026-07-12T18:03:08.930Z</lastmod>
   </url>
   <url>
-    <loc>https://mauricio-moreno.net/about.html</loc>
-    <lastmod>2026-07-12T13:20:50.280Z</lastmod>
+    <loc>https://mauricio-moreno.net/projects/cometa-fermentation/index.html</loc>
+    <lastmod>2026-07-12T18:03:08.944Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/projects/cometa-carbs/index.html</loc>
+    <lastmod>2026-07-12T18:03:08.931Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/projects.html</loc>
+    <lastmod>2026-07-12T18:03:08.931Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/privacy.html</loc>
-    <lastmod>2026-07-12T13:20:50.281Z</lastmod>
+    <lastmod>2026-07-12T18:03:08.931Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/impressum.html</loc>
-    <lastmod>2026-07-12T13:20:50.281Z</lastmod>
+    <lastmod>2026-07-12T18:03:08.930Z</lastmod>
   </url>
   <url>
-    <loc>https://mauricio-moreno.net/index.html</loc>
-    <lastmod>2026-07-12T13:20:50.281Z</lastmod>
+    <loc>https://mauricio-moreno.net/projects_draf.html</loc>
+    <lastmod>2026-07-12T18:03:08.951Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/projects/cometa-cocoa/index.html</loc>
+    <lastmod>2026-07-12T18:03:08.931Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/publications.html</loc>
+    <lastmod>2026-07-12T18:03:08.951Z</lastmod>
   </url>
 </urlset>
