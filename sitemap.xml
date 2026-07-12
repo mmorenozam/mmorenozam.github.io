@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mauricio-moreno.net/index.html</loc>
-    <lastmod>2026-07-12T09:28:27.167Z</lastmod>
+    <loc>https://mauricio-moreno.net/research.html</loc>
+    <lastmod>2026-07-12T13:20:50.282Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/about.html</loc>
-    <lastmod>2026-07-12T09:28:27.165Z</lastmod>
+    <lastmod>2026-07-12T13:20:50.280Z</lastmod>
   </url>
   <url>
-    <loc>https://mauricio-moreno.net/publications.html</loc>
-    <lastmod>2026-07-12T09:28:27.167Z</lastmod>
+    <loc>https://mauricio-moreno.net/privacy.html</loc>
+    <lastmod>2026-07-12T13:20:50.281Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/impressum.html</loc>
+    <lastmod>2026-07-12T13:20:50.281Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/index.html</loc>
+    <lastmod>2026-07-12T13:20:50.281Z</lastmod>
   </url>
 </urlset>

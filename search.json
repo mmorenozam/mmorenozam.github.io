@@ -1,5 +1,96 @@
 [
   {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "Research\n\n\nPublications\n\n\n\n\n\n\n\n\nJ. Langbein. M. Moreno-Zambrano and K. Siebert. How do goats “read” 2D-images of familiar and unfamiliar conspecifics?. Frontiers in Psychology, 14, 2023. \n\n\n\n\n\n\nM. Moreno-Zambrano, M. S. Ullrich, and M-T. Hütt. Exploring cocoa bean fermentation mechanisms by kinetic modelling. Royal Society Open Science, 9(2), 2022. \n\n\n\n\n\n\nR. Megias-Perez, M. Moreno-Zambrano, B. Behrends, M. Corno, and N. Kuhnert. Monitoring the changes of low molecular weight carbohydrates in cocoa beans during spontaneous fermentation: a chemometric and kinetic approach. Food Research International, 2019. \n\n\n\n\n\n\nM. Moreno-Zambrano, S. Grimbs, M. S. Ullrich, and M-T. Hütt. A mathematical model of cocoa bean fermentation. Royal Society Open Science, 5(10), 2018. \n\n\n\n\n\n\nF. J. Flores, S. M. Marek, J. A. Anderson, T. K. Mitchell, M. Moreno-Zambrano, and N. R. Walker. Reactive oxygen species production and alternative hosts of spring dead spot-causing fungi. International Turfgrass Society and ACSESS, 13:213–224, 2017."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "privacy.html",
+    "href": "privacy.html",
+    "title": "Privacy Policy",
+    "section": "",
+    "text": "This website is a personal professional portfolio website.\nNo personal data is collected directly through forms or user accounts."
+  },
+  {
+    "objectID": "privacy.html#general-information",
+    "href": "privacy.html#general-information",
+    "title": "Privacy Policy",
+    "section": "",
+    "text": "This website is a personal professional portfolio website.\nNo personal data is collected directly through forms or user accounts."
+  },
+  {
+    "objectID": "privacy.html#hosting",
+    "href": "privacy.html#hosting",
+    "title": "Privacy Policy",
+    "section": "Hosting",
+    "text": "Hosting\nThis website is hosted through GitHub Pages.\nGitHub may process technical information such as IP addresses and server logs as part of providing the hosting service."
+  },
+  {
+    "objectID": "privacy.html#external-links",
+    "href": "privacy.html#external-links",
+    "title": "Privacy Policy",
+    "section": "External links",
+    "text": "External links\nThis website contains links to external websites, including LinkedIn and Google Scholar.\nWhen visiting external websites, their respective privacy policies apply."
+  },
+  {
+    "objectID": "privacy.html#cookies",
+    "href": "privacy.html#cookies",
+    "title": "Privacy Policy",
+    "section": "Cookies",
+    "text": "Cookies\nThis website does not use tracking cookies, analytics services, or advertising technologies."
+  },
+  {
+    "objectID": "privacy.html#contact",
+    "href": "privacy.html#contact",
+    "title": "Privacy Policy",
+    "section": "Contact",
+    "text": "Contact\nIf you contact me via email, the information you provide will only be used to respond to your request."
+  },
+  {
+    "objectID": "impressum.html",
+    "href": "impressum.html",
+    "title": "Impressum",
+    "section": "",
+    "text": "Responsible for the content of this website:\nMauricio Moreno\n40215 Germany"
+  },
+  {
+    "objectID": "impressum.html#information-according-to-5-ddg",
+    "href": "impressum.html#information-according-to-5-ddg",
+    "title": "Impressum",
+    "section": "",
+    "text": "Responsible for the content of this website:\nMauricio Moreno\n40215 Germany"
+  },
+  {
+    "objectID": "impressum.html#contact",
+    "href": "impressum.html#contact",
+    "title": "Impressum",
+    "section": "Contact",
+    "text": "Contact\nEmail: mauriciomoreno@example.com"
+  },
+  {
+    "objectID": "impressum.html#disclaimer",
+    "href": "impressum.html#disclaimer",
+    "title": "Impressum",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nThe contents of this website have been created with care. However, no guarantee is given regarding the accuracy, completeness, or currentness of the information provided."
+  },
+  {
+    "objectID": "impressum.html#copyright",
+    "href": "impressum.html#copyright",
+    "title": "Impressum",
+    "section": "Copyright",
+    "text": "Copyright\nUnless otherwise stated, all content on this website is protected by copyright. Please contact me before reproducing or using any materials beyond personal use."
+  },
+  {
     "objectID": "index.html#education",
     "href": "index.html#education",
     "title": "Mauricio Moreno, PhD",
@@ -14,17 +105,10 @@
     "text": "Experience"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "J. Langbein. M. Moreno-Zambrano and K. Siebert. How do goats “read” 2D-images of familiar and unfamiliar conspecifics?. Frontiers in Psychology, 14, 2023. \n\n\n\n\n\n\nM. Moreno-Zambrano, M. S. Ullrich, and M-T. Hütt. Exploring cocoa bean fermentation mechanisms by kinetic modelling. Royal Society Open Science, 9(2), 2022. \n\n\n\n\n\n\nR. Megias-Perez, M. Moreno-Zambrano, B. Behrends, M. Corno, and N. Kuhnert. Monitoring the changes of low molecular weight carbohydrates in cocoa beans during spontaneous fermentation: a chemometric and kinetic approach. Food Research International, 2019. \n\n\n\n\n\n\nM. Moreno-Zambrano, S. Grimbs, M. S. Ullrich, and M-T. Hütt. A mathematical model of cocoa bean fermentation. Royal Society Open Science, 5(10), 2018. \n\n\n\n\n\n\nF. J. Flores, S. M. Marek, J. A. Anderson, T. K. Mitchell, M. Moreno-Zambrano, and N. R. Walker. Reactive oxygen species production and alternative hosts of spring dead spot-causing fungi. International Turfgrass Society and ACSESS, 13:213–224, 2017."
+    "objectID": "index.html#lets-connect",
+    "href": "index.html#lets-connect",
+    "title": "Mauricio Moreno, PhD",
+    "section": "Let’s connect",
+    "text": "Let’s connect\nI’m always interested in discussing statistical modelling, data science, research collaborations, and teaching opportunities.\n\n ✉️ Email \n 💼 LinkedIn \n 🎓 Google Scholar"
   }
 ]
