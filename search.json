@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Mauricio Moreno, PhD",
-    "section": "Education",
-    "text": "Education"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Mauricio Moreno, PhD",
-    "section": "Experience",
-    "text": "Experience"
-  },
-  {
-    "objectID": "index.html#lets-connect",
-    "href": "index.html#lets-connect",
-    "title": "Mauricio Moreno, PhD",
-    "section": "Let’s connect",
-    "text": "Let’s connect\nI’m always interested in discussing statistical modelling, data science, research collaborations, and teaching opportunities.\n\n ✉️ Email \n 💼 LinkedIn \n 🎓 Google Scholar"
-  },
-  {
     "objectID": "teaching.html",
     "href": "teaching.html",
     "title": "Teaching",
@@ -63,6 +42,13 @@
     "text": "Estadística Aplicada con R\n\n\n\n\n\nDuración: 40 horas\nFecha: Abril 2023\nSponsor: Universidad Central del Ecuador\nEstadística aplicada con R es un curso orientado al uso práctico de herramientas estadísticas para el análisis de datos mediante el lenguaje R. El curso cubre desde fundamentos de programación y análisis exploratorio de datos hasta principios de diseño de experimentos y métodos inferenciales. Se abordan técnicas estadísticas paramétricas y no paramétricas, análisis de varianza y modelos de regresión, enfatizando su correcta aplicación e interpretación. A lo largo del curso se promueve el uso de visualización de datos y buenas prácticas de análisis para apoyar la toma de decisiones en contextos científicos y aplicados.\nMaterial disponible aquí"
   },
   {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "J. Langbein. M. Moreno-Zambrano and K. Siebert. How do goats “read” 2D-images of familiar and unfamiliar conspecifics?. Frontiers in Psychology, 14, 2023. \n\n\n\n\n\n\nM. Moreno-Zambrano, M. S. Ullrich, and M-T. Hütt. Exploring cocoa bean fermentation mechanisms by kinetic modelling. Royal Society Open Science, 9(2), 2022. \n\n\n\n\n\n\nR. Megias-Perez, M. Moreno-Zambrano, B. Behrends, M. Corno, and N. Kuhnert. Monitoring the changes of low molecular weight carbohydrates in cocoa beans during spontaneous fermentation: a chemometric and kinetic approach. Food Research International, 2019. \n\n\n\n\n\n\nM. Moreno-Zambrano, S. Grimbs, M. S. Ullrich, and M-T. Hütt. A mathematical model of cocoa bean fermentation. Royal Society Open Science, 5(10), 2018. \n\n\n\n\n\n\nF. J. Flores, S. M. Marek, J. A. Anderson, T. K. Mitchell, M. Moreno-Zambrano, and N. R. Walker. Reactive oxygen species production and alternative hosts of spring dead spot-causing fungi. International Turfgrass Society and ACSESS, 13:213–224, 2017."
+  },
+  {
     "objectID": "projects/cometa-cocoa/index.html",
     "href": "projects/cometa-cocoa/index.html",
     "title": "COMETA — Cocoa Metabolomics",
@@ -75,6 +61,97 @@
     "title": "Projects",
     "section": "",
     "text": "Order By\n      Default\n      \n        Title\n      \n    \n  \n\n\n\n\n\n\n\n\n\n\nCOMETA — Cocoa Metabolomics\n\n\nCOMETA (COcoa METAbolomics) was a six-year interdisciplinary research initiative\n\n\n\n\n\n\n\n\n\n\n\n\nCarbohydrate Kinetics During Cocoa Bean Fermentation\n\n\nCollaboration in determining carbohydrate kinetics in the fermentation process.\n\n\n\n\n\n\n\n\n\n\n\n\nBayesian Kinetic Modelling of Cocoa Bean Fermentation\n\n\nODE modelling of cocoa bean fermentation kinetics using Stan\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Mauricio Moreno, PhD",
+    "section": "Education",
+    "text": "Education"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Mauricio Moreno, PhD",
+    "section": "Experience",
+    "text": "Experience"
+  },
+  {
+    "objectID": "index.html#lets-connect",
+    "href": "index.html#lets-connect",
+    "title": "Mauricio Moreno, PhD",
+    "section": "Let’s connect",
+    "text": "Let’s connect\nI’m always interested in discussing statistical modelling, data science, research collaborations, and teaching opportunities.\n\n ✉️ Email \n 💼 LinkedIn \n 🎓 Google Scholar"
+  },
+  {
+    "objectID": "certifications.html",
+    "href": "certifications.html",
+    "title": "Certifications",
+    "section": "",
+    "text": "A detailed record of completed coursework and certifications, organized by specialization/track."
+  },
+  {
+    "objectID": "certifications.html#clinical-trials",
+    "href": "certifications.html#clinical-trials",
+    "title": "Certifications",
+    "section": "Clinical Trials Operations Specialization",
+    "text": "Clinical Trials Operations Specialization\nJohns Hopkins University — Coursera · Completed · full specialization certificate\n\nDesign and Conduct of Clinical Trials\nClinical Trials Data Management and Quality Assurance\nClinical Trials Management and Advanced Operations\nClinical Trials Analysis, Monitoring, and Presentation"
+  },
+  {
+    "objectID": "certifications.html#google-data-analytics",
+    "href": "certifications.html#google-data-analytics",
+    "title": "Certifications",
+    "section": "Google Data Analytics Specialization",
+    "text": "Google Data Analytics Specialization\nGoogle — Coursera · In progress\n\nFoundations: Data, Data, Everywhere\nAsk Questions to Make Data-Driven Decisions\nPrepare Data for Exploration\nProcess Data from Dirty to Clean\nAccelerate Your Job Search with AI"
+  },
+  {
+    "objectID": "certifications.html#sql-fundamentals",
+    "href": "certifications.html#sql-fundamentals",
+    "title": "Certifications",
+    "section": "SQL Fundamentals",
+    "text": "SQL Fundamentals\nDataCamp · In progress\n\nIntroduction to SQL\nIntermediate SQL\nJoining Data in SQL"
+  },
+  {
+    "objectID": "certifications.html#standalone-courses",
+    "href": "certifications.html#standalone-courses",
+    "title": "Certifications",
+    "section": "Standalone Courses",
+    "text": "Standalone Courses\n\nIntroduction to Clinical Data Science — Coursera\nIntroduction to Statistics & Data Analysis in Public Health — Coursera\nGetting Started with SAS Programming — Coursera"
+  },
+  {
+    "objectID": "impressum.html",
+    "href": "impressum.html",
+    "title": "Impressum",
+    "section": "",
+    "text": "Responsible for the content of this website:\nMauricio Moreno\n40215 Germany"
+  },
+  {
+    "objectID": "impressum.html#information-according-to-5-ddg",
+    "href": "impressum.html#information-according-to-5-ddg",
+    "title": "Impressum",
+    "section": "",
+    "text": "Responsible for the content of this website:\nMauricio Moreno\n40215 Germany"
+  },
+  {
+    "objectID": "impressum.html#contact",
+    "href": "impressum.html#contact",
+    "title": "Impressum",
+    "section": "Contact",
+    "text": "Contact\nEmail: mmorenozambrano@gmail.com"
+  },
+  {
+    "objectID": "impressum.html#disclaimer",
+    "href": "impressum.html#disclaimer",
+    "title": "Impressum",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nThe contents of this website have been created with care. However, no guarantee is given regarding the accuracy, completeness, or currentness of the information provided."
+  },
+  {
+    "objectID": "impressum.html#copyright",
+    "href": "impressum.html#copyright",
+    "title": "Impressum",
+    "section": "Copyright",
+    "text": "Copyright\nUnless otherwise stated, all content on this website is protected by copyright. Please contact me before reproducing or using any materials beyond personal use."
   },
   {
     "objectID": "privacy.html",
@@ -119,41 +196,6 @@
     "text": "Contact\nIf you contact me via email, the information you provide will only be used to respond to your request."
   },
   {
-    "objectID": "impressum.html",
-    "href": "impressum.html",
-    "title": "Impressum",
-    "section": "",
-    "text": "Responsible for the content of this website:\nMauricio Moreno\n40215 Germany"
-  },
-  {
-    "objectID": "impressum.html#information-according-to-5-ddg",
-    "href": "impressum.html#information-according-to-5-ddg",
-    "title": "Impressum",
-    "section": "",
-    "text": "Responsible for the content of this website:\nMauricio Moreno\n40215 Germany"
-  },
-  {
-    "objectID": "impressum.html#contact",
-    "href": "impressum.html#contact",
-    "title": "Impressum",
-    "section": "Contact",
-    "text": "Contact\nEmail: mmorenozambrano@gmail.com"
-  },
-  {
-    "objectID": "impressum.html#disclaimer",
-    "href": "impressum.html#disclaimer",
-    "title": "Impressum",
-    "section": "Disclaimer",
-    "text": "Disclaimer\nThe contents of this website have been created with care. However, no guarantee is given regarding the accuracy, completeness, or currentness of the information provided."
-  },
-  {
-    "objectID": "impressum.html#copyright",
-    "href": "impressum.html#copyright",
-    "title": "Impressum",
-    "section": "Copyright",
-    "text": "Copyright\nUnless otherwise stated, all content on this website is protected by copyright. Please contact me before reproducing or using any materials beyond personal use."
-  },
-  {
     "objectID": "projects/cometa-carbs/index.html",
     "href": "projects/cometa-carbs/index.html",
     "title": "Carbohydrate Kinetics During Cocoa Bean Fermentation",
@@ -168,10 +210,24 @@
     "text": "Photo by Ly Le Minh\n\n\nMy core PhD research focused on developing kinetic models of cocoa bean fermentation using Bayesian methods coded in Stan to fit systems of ordinary differential equations to previously published fermentation trial data. This work allowed us to quantitatively describe how key biochemical compounds evolve during fermentation — a critical step in determining the final flavor profile of chocolate.\nI presented a summary of this research at StanCon 2019 in Cambridge. You can view the accompanying notebook here."
   },
   {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
+    "objectID": "skills.html",
+    "href": "skills.html",
+    "title": "Skills",
     "section": "",
-    "text": "J. Langbein. M. Moreno-Zambrano and K. Siebert. How do goats “read” 2D-images of familiar and unfamiliar conspecifics?. Frontiers in Psychology, 14, 2023. \n\n\n\n\n\n\nM. Moreno-Zambrano, M. S. Ullrich, and M-T. Hütt. Exploring cocoa bean fermentation mechanisms by kinetic modelling. Royal Society Open Science, 9(2), 2022. \n\n\n\n\n\n\nR. Megias-Perez, M. Moreno-Zambrano, B. Behrends, M. Corno, and N. Kuhnert. Monitoring the changes of low molecular weight carbohydrates in cocoa beans during spontaneous fermentation: a chemometric and kinetic approach. Food Research International, 2019. \n\n\n\n\n\n\nM. Moreno-Zambrano, S. Grimbs, M. S. Ullrich, and M-T. Hütt. A mathematical model of cocoa bean fermentation. Royal Society Open Science, 5(10), 2018. \n\n\n\n\n\n\nF. J. Flores, S. M. Marek, J. A. Anderson, T. K. Mitchell, M. Moreno-Zambrano, and N. R. Walker. Reactive oxygen species production and alternative hosts of spring dead spot-causing fungi. International Turfgrass Society and ACSESS, 13:213–224, 2017."
+    "text": "R SAS SQL Stan Python (basic-intermediate) Bayesian Modeling Generalized Linear Mixed Models (GLMM) Experimental & Clinical Trial Design Statistical Consulting Data Wrangling & Cleaning Reproducible Reporting (Quarto/R Markdown)"
+  },
+  {
+    "objectID": "skills.html#core-technical-skills",
+    "href": "skills.html#core-technical-skills",
+    "title": "Skills",
+    "section": "",
+    "text": "R SAS SQL Stan Python (basic-intermediate) Bayesian Modeling Generalized Linear Mixed Models (GLMM) Experimental & Clinical Trial Design Statistical Consulting Data Wrangling & Cleaning Reproducible Reporting (Quarto/R Markdown)"
+  },
+  {
+    "objectID": "skills.html#specializations",
+    "href": "skills.html#specializations",
+    "title": "Skills",
+    "section": "Specializations",
+    "text": "Specializations\n\nClinical Trials Operations Specialization\nJohns Hopkins University — Coursera · view specialization certificate\nFour-course specialization covering clinical trial design, operations management, data management & quality assurance, and results analysis/presentation. View credentials →\n\n\nGoogle Data Analytics Specialization\nGoogle — Coursera (in progress)\nCovers the full data analysis lifecycle — from data cleaning and preparation to exploration and data-driven decision-making. View credentials →\n\n\nSQL Fundamentals\nDataCamp (in progress)\nSkill track covering SQL querying, joins, and intermediate query techniques across relational databases. View credentials →\n\nFor a complete, detailed list of all courses and verification links, see the full certification history."
   }
 ]
