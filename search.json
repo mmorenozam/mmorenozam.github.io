@@ -21,18 +21,53 @@
     "text": "Let’s connect\nI’m always interested in discussing statistical modelling, data science, research collaborations, and teaching opportunities.\n\n ✉️ Email \n 💼 LinkedIn \n 🎓 Google Scholar"
   },
   {
-    "objectID": "projects/cometa-fermentation/index.html",
-    "href": "projects/cometa-fermentation/index.html",
-    "title": "Bayesian Kinetic Modelling of Cocoa Bean Fermentation",
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
     "section": "",
-    "text": "Photo by Ly Le Minh\n\n\nMy core PhD research focused on developing kinetic models of cocoa bean fermentation using Bayesian methods coded in Stan to fit systems of ordinary differential equations to previously published fermentation trial data. This work allowed us to quantitatively describe how key biochemical compounds evolve during fermentation — a critical step in determining the final flavor profile of chocolate.\nI presented a summary of this research at StanCon 2019 in Cambridge. You can view the accompanying notebook here."
+    "text": "In 2012, I was awarded a scholarship by the Government of Ecuador to pursue an MSc in Statistics at KU Leuven in Belgium. As part of the scholarship program, recipients were encouraged to give back by sharing the knowledge and skills acquired during their studies. I chose to fulfill this commitment by developing and teaching online courses in statistics, a decision that naturally aligned with my long standing passion for education.\nMy interest in teaching began several years earlier, when I worked as a high school Chemistry teacher at one of Quito’s oldest and most established schools. That experience confirmed how rewarding it is to help others build confidence in quantitative subjects and has continued to shape the way I communicate statistical concepts today.\nAlthough I completed my scholarship service years ago, teaching remains an important part of my professional life. I continue to develop and deliver courses because I hope to dedicate a larger part of my career to education in the future, and because I strongly believe that improving statistical literacy can make a meaningful contribution to scientific research and evidence based decision making, particularly in Ecuador.\nBelow you will find a catalog of the courses and seminars I have taught over the years (in Spanish only)."
   },
   {
-    "objectID": "projects/cometa-carbs/index.html",
-    "href": "projects/cometa-carbs/index.html",
-    "title": "Carbohydrate Kinetics During Cocoa Bean Fermentation",
+    "objectID": "teaching.html#bioestadística-en-r",
+    "href": "teaching.html#bioestadística-en-r",
+    "title": "Teaching",
+    "section": "Bioestadística en R",
+    "text": "Bioestadística en R\n\n\n\n\n\nDuración: 40 horas\nFecha: Abril y Mayo 2025\nSponsor: Biohack Laboratorio Comunitario\nBioestadística en R es un curso con enfoque práctico orientado al análisis de datos en biología y agricultura. A lo largo del curso se guía a los participantes a través del flujo completo de una investigación, desde la formulación de preguntas y el diseño experimental hasta el análisis e interpretación de resultados. Se abordan herramientas de análisis exploratorio, visualización de datos y estadística descriptiva, así como buenas prácticas de limpieza, documentación y programación. El curso enfatiza el uso aplicado del lenguaje R y fomenta el trabajo con datos propios de los participantes, reflejando su uso actual tanto en la academia como en la industria.\nMaterial disponible aquí"
+  },
+  {
+    "objectID": "teaching.html#introducción-a-la-estadística-para-ciencias-biológicas-con-r",
+    "href": "teaching.html#introducción-a-la-estadística-para-ciencias-biológicas-con-r",
+    "title": "Teaching",
+    "section": "Introducción a la Estadística para Ciencias Biológicas con R",
+    "text": "Introducción a la Estadística para Ciencias Biológicas con R\n\n\n\n\n\nDuración: 40 horas\nFecha: Septiembre y Octubre 2024\nSponsor: Biohack Laboratorio Comunitario\nIntroducción a la Estadística para Ciencias Biológicas con R es un curso orientado a brindar una base práctica en el uso de metodologías estadísticas aplicadas a la biología y la agricultura. El curso recorre las distintas etapas del análisis de datos en una investigación, desde la formulación de preguntas y el diseño experimental hasta el análisis e interpretación de resultados. Se enfatizan herramientas de análisis exploratorio, estadística descriptiva y visualización de datos, junto con aspectos operativos como la limpieza, preparación y documentación de datos. A lo largo del curso se promueve el uso aplicado del lenguaje R y el trabajo con datos reales, reflejando prácticas actuales en investigación académica y aplicada.\nMaterial disponible aquí"
+  },
+  {
+    "objectID": "teaching.html#creación-de-reportes-con-quarto-y-r",
+    "href": "teaching.html#creación-de-reportes-con-quarto-y-r",
+    "title": "Teaching",
+    "section": "Creación de Reportes con Quarto y R",
+    "text": "Creación de Reportes con Quarto y R\n\n\n\n\n\nDuración: 40 horas\nFecha: Septiembre y Octubre 2024\nSponsor: Sociedad Ecuatoriana de Estadística\nCreación de Reportes con Quarto y R es un curso práctico enfocado en la elaboración de documentos técnicos y científicos reproducibles utilizando Quarto y el lenguaje R. A lo largo del curso, los participantes aprenden a integrar análisis estadísticos con texto, tablas y visualizaciones para comunicar resultados de manera clara y profesional. Se abordan aspectos clave como limpieza de datos, análisis exploratorio y pruebas estadísticas básicas, culminando en la generación de reportes en formatos Word, PDF y HTML. El curso está diseñado para ser accesible a personas sin formación previa profunda en estadística o programación, facilitando la adopción de buenas prácticas de análisis y comunicación científica.\nMaterial disponible aquí"
+  },
+  {
+    "objectID": "teaching.html#introducción-a-la-visualización-de-datos-y-creación-de-reportes-en-r",
+    "href": "teaching.html#introducción-a-la-visualización-de-datos-y-creación-de-reportes-en-r",
+    "title": "Teaching",
+    "section": "Introducción a la visualización de datos y creación de reportes en R",
+    "text": "Introducción a la visualización de datos y creación de reportes en R\n\n\n\n\n\nDuración: 40 horas\nFecha: Octubre y Noviembre 2023\nSponsor: Universidad Central del Ecuador\nIntroducción a la visualización de datos y creación de reportes en R es un curso práctico orientado al análisis, visualización y comunicación de datos utilizando el lenguaje R. Los participantes adquieren habilidades para la manipulación y limpieza de datos, el análisis exploratorio y la aplicación de metodologías estadísticas básicas. El curso enfatiza la creación de gráficos profesionales mediante ggplot2 y la elaboración de reportes reproducibles utilizando Quarto. Está diseñado para personas con conocimientos iniciales en R y estadística, y busca fortalecer buenas prácticas de programación y presentación de resultados en contextos académicos y aplicados.\nMaterial disponible aquí"
+  },
+  {
+    "objectID": "teaching.html#estadística-aplicada-con-r",
+    "href": "teaching.html#estadística-aplicada-con-r",
+    "title": "Teaching",
+    "section": "Estadística Aplicada con R",
+    "text": "Estadística Aplicada con R\n\n\n\n\n\nDuración: 40 horas\nFecha: Abril 2023\nSponsor: Universidad Central del Ecuador\nEstadística aplicada con R es un curso orientado al uso práctico de herramientas estadísticas para el análisis de datos mediante el lenguaje R. El curso cubre desde fundamentos de programación y análisis exploratorio de datos hasta principios de diseño de experimentos y métodos inferenciales. Se abordan técnicas estadísticas paramétricas y no paramétricas, análisis de varianza y modelos de regresión, enfatizando su correcta aplicación e interpretación. A lo largo del curso se promueve el uso de visualización de datos y buenas prácticas de análisis para apoyar la toma de decisiones en contextos científicos y aplicados.\nMaterial disponible aquí"
+  },
+  {
+    "objectID": "projects/cometa-cocoa/index.html",
+    "href": "projects/cometa-cocoa/index.html",
+    "title": "COMETA — Cocoa Metabolomics",
     "section": "",
-    "text": "Alongside my main research, I collaborated with experimentalists in the group as a statistical consultant. One such collaboration led to a co-authored publication on changes in low-molecular-weight carbohydrates during cocoa fermentation, for which I applied Generalized Linear Mixed Models (GLMM) to characterize the differing degradation kinetics of these compounds.\nRead the full paper: Food Research International (2020)."
+    "text": "Photo by Trnava University\n\n\nCOMETA (COcoa METAbolomics) was a six-year interdisciplinary research initiative between Jacobs University Bremen and Barry Callebaut, aimed at mapping the roughly 20,000 molecules that give cocoa its taste, aroma, and flavor — from raw bean to finished chocolate. I joined the project in 2016 as a PhD student, contributing to two areas of the research: kinetic modelling of the fermentation process, and statistical consulting on a related metabolomics study. Learn more about COMETA."
   },
   {
     "objectID": "projects.html",
@@ -119,25 +154,18 @@
     "text": "Copyright\nUnless otherwise stated, all content on this website is protected by copyright. Please contact me before reproducing or using any materials beyond personal use."
   },
   {
-    "objectID": "projects_draf.html",
-    "href": "projects_draf.html",
-    "title": "Untitled",
+    "objectID": "projects/cometa-carbs/index.html",
+    "href": "projects/cometa-carbs/index.html",
+    "title": "Carbohydrate Kinetics During Cocoa Bean Fermentation",
     "section": "",
-    "text": "COMETA (COcoa METAbolomics) was a six-year interdisciplinary research initiative between Jacobs University Bremen and Barry Callebaut, aimed at mapping the roughly 20,000 molecules that give cocoa its taste, aroma, and flavor — from raw bean to finished chocolate. I joined the project in 2016 as a PhD student, contributing to two areas of the research: kinetic modeling of the fermentation process, and statistical consulting on a related metabolomics study. Learn more about COMETA.\n\n\nMy core PhD research focused on developing kinetic models of cocoa bean fermentation using Bayesian methods coded in Stan to fit systems of ordinary differential equations to previously published fermentation trial data. This work allowed us to quantitatively describe how key biochemical compounds evolve during fermentation — a critical step in determining the final flavor profile of chocolate.\nI presented a summary of this research at StanCon 2019 in Cambridge. You can view the accompanying notebook here.\nTools: R, Stan, Bayesian inference, ODE systems\n\n\n\nAlongside my main research, I collaborated with experimentalists in the group as a statistical consultant. One such collaboration led to a co-authored publication on changes in low-molecular-weight carbohydrates during cocoa fermentation, for which I applied Generalized Linear Mixed Models (GLMM) to characterize the differing degradation kinetics of these compounds.\nRead the full paper: Food Research International (2020)\nTools: R, GLMM, statistical consulting"
+    "text": "Alongside my main research, I collaborated with experimentalists in the group as a statistical consultant. One such collaboration led to a co-authored publication on changes in low-molecular-weight carbohydrates during cocoa fermentation, for which I applied Generalized Linear Mixed Models (GLMM) to characterize the differing degradation kinetics of these compounds.\nRead the full paper: Food Research International (2020)."
   },
   {
-    "objectID": "projects_draf.html#projects",
-    "href": "projects_draf.html#projects",
-    "title": "Untitled",
+    "objectID": "projects/cometa-fermentation/index.html",
+    "href": "projects/cometa-fermentation/index.html",
+    "title": "Bayesian Kinetic Modelling of Cocoa Bean Fermentation",
     "section": "",
-    "text": "COMETA (COcoa METAbolomics) was a six-year interdisciplinary research initiative between Jacobs University Bremen and Barry Callebaut, aimed at mapping the roughly 20,000 molecules that give cocoa its taste, aroma, and flavor — from raw bean to finished chocolate. I joined the project in 2016 as a PhD student, contributing to two areas of the research: kinetic modeling of the fermentation process, and statistical consulting on a related metabolomics study. Learn more about COMETA.\n\n\nMy core PhD research focused on developing kinetic models of cocoa bean fermentation using Bayesian methods coded in Stan to fit systems of ordinary differential equations to previously published fermentation trial data. This work allowed us to quantitatively describe how key biochemical compounds evolve during fermentation — a critical step in determining the final flavor profile of chocolate.\nI presented a summary of this research at StanCon 2019 in Cambridge. You can view the accompanying notebook here.\nTools: R, Stan, Bayesian inference, ODE systems\n\n\n\nAlongside my main research, I collaborated with experimentalists in the group as a statistical consultant. One such collaboration led to a co-authored publication on changes in low-molecular-weight carbohydrates during cocoa fermentation, for which I applied Generalized Linear Mixed Models (GLMM) to characterize the differing degradation kinetics of these compounds.\nRead the full paper: Food Research International (2020)\nTools: R, GLMM, statistical consulting"
-  },
-  {
-    "objectID": "projects/cometa-cocoa/index.html",
-    "href": "projects/cometa-cocoa/index.html",
-    "title": "COMETA — Cocoa Metabolomics",
-    "section": "",
-    "text": "Photo by Trnava University\n\n\nCOMETA (COcoa METAbolomics) was a six-year interdisciplinary research initiative between Jacobs University Bremen and Barry Callebaut, aimed at mapping the roughly 20,000 molecules that give cocoa its taste, aroma, and flavor — from raw bean to finished chocolate. I joined the project in 2016 as a PhD student, contributing to two areas of the research: kinetic modelling of the fermentation process, and statistical consulting on a related metabolomics study. Learn more about COMETA."
+    "text": "Photo by Ly Le Minh\n\n\nMy core PhD research focused on developing kinetic models of cocoa bean fermentation using Bayesian methods coded in Stan to fit systems of ordinary differential equations to previously published fermentation trial data. This work allowed us to quantitatively describe how key biochemical compounds evolve during fermentation — a critical step in determining the final flavor profile of chocolate.\nI presented a summary of this research at StanCon 2019 in Cambridge. You can view the accompanying notebook here."
   },
   {
     "objectID": "publications.html",
