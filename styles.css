@@ -348,3 +348,39 @@
   font-weight:600;
 
 }
+
+/* Skills grid / pills */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.skills-grid code {
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85em;
+  font-weight: 500;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background-color: color-mix(in srgb, var(--bs-primary) 15%, transparent);
+  color: var(--bs-primary);
+  border: 1px solid color-mix(in srgb, var(--bs-primary) 35%, transparent);
+}
+
+.skills-grid code:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: color-mix(in srgb, var(--bs-primary) 25%, transparent);
+}
+
+.skills-grid code {
+  background-color: rgba(44, 62, 80, 0.12); /* fallback fijo */
+  color: var(--bs-primary);
+  border: 1px solid rgba(44, 62, 80, 0.3);
+  /* Overrides modernos si el navegador soporta color-mix */
+  background-color: color-mix(in srgb, var(--bs-primary) 15%, transparent);
+  border-color: color-mix(in srgb, var(--bs-primary) 35%, transparent);
+}

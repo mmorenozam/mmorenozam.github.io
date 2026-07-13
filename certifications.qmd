@@ -1,0 +1,36 @@
+---
+title: "Certifications"
+page-layout: full
+---
+
+A detailed record of completed coursework and certifications, organized by specialization/track.
+
+## Clinical Trials Operations Specialization {#clinical-trials}
+**Johns Hopkins University — Coursera** · *Completed* · [<small>full specialization certificate</small>](https://www.coursera.org/account/accomplishments/specialization/2FI5D06DC5R7){target="_blank"}
+
+- [Design and Conduct of Clinical Trials](https://www.coursera.org/account/accomplishments/verify/F5HAAQ1ZLD9O){target="_blank"}
+- [Clinical Trials Data Management and Quality Assurance](https://www.coursera.org/account/accomplishments/verify/BZICZ3YXFEJ0){target="_blank"}
+- [Clinical Trials Management and Advanced Operations](https://www.coursera.org/account/accomplishments/verify/7T7XGG4ATQ8O){target="_blank"}
+- [Clinical Trials Analysis, Monitoring, and Presentation](https://www.coursera.org/account/accomplishments/verify/CYHWNR7KJKMK){target="_blank"}
+
+## Google Data Analytics Specialization {#google-data-analytics}
+**Google — Coursera** · *In progress*
+
+- [Foundations: Data, Data, Everywhere](https://www.coursera.org/account/accomplishments/verify/6LXV2TFVVVTI){target="_blank"}
+- [Ask Questions to Make Data-Driven Decisions](https://www.coursera.org/account/accomplishments/verify/IHS1V36V54OW){target="_blank"}
+- [Prepare Data for Exploration](https://www.coursera.org/account/accomplishments/verify/H8LCJFJQTJ0L){target="_blank"}
+- [Process Data from Dirty to Clean](https://www.coursera.org/account/accomplishments/verify/Z95LQUCCH551){target="_blank"}
+- [Accelerate Your Job Search with AI](https://www.coursera.org/account/accomplishments/verify/NJF8E0NK1I84){target="_blank"}
+
+## SQL Fundamentals {#sql-fundamentals}
+**DataCamp** · *In progress*
+
+- [Introduction to SQL](https://www.datacamp.com/completed/statement-of-accomplishment/course/313404fb107c7229a9f127332b7c96858ee4de1c){target="_blank"}
+- [Intermediate SQL](https://www.datacamp.com/completed/statement-of-accomplishment/course/f443332f4f53e416303e7a520dc3fef4852dd63b){target="_blank"}
+- [Joining Data in SQL](https://www.datacamp.com/completed/statement-of-accomplishment/course/33e55ba8342a461ee40a7770fa180aad52064966){target="_blank"}
+
+## Standalone Courses
+
+- [Introduction to Clinical Data Science](https://www.coursera.org/account/accomplishments/verify/LBGHHV8NBENR){target="_blank"} — Coursera
+- [Introduction to Statistics & Data Analysis in Public Health](https://www.coursera.org/account/accomplishments/verify/OVC69RESEK89){target="_blank"} — Coursera
+- [Getting Started with SAS Programming](https://www.coursera.org/account/accomplishments/verify/AIHF4J9IZ2Q3){target="_blank"} — Coursera

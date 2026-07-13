@@ -1,5 +1,7 @@
 project:
   type: website
+  render: 
+    - "*.qmd"
 
 description-meta: "Quarto Website adapted by Mauricio Moreno, PhD"
 author-meta: "Mauricio Moreno, PhD"
@@ -13,8 +15,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      # - text: Skills
-      #   href: skills.qmd
+      - text: Skills
+        href: skills.qmd
       - text: Projects
         href: projects.qmd
       - text: Teaching
