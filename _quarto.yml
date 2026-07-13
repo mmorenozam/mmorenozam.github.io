@@ -17,8 +17,8 @@ website:
       #   href: skills.qmd
       - text: Projects
         href: projects.qmd
-      # - text: Teaching
-      #   href: teaching.qmd
+      - text: Teaching
+        href: teaching.qmd
       - text: Publications
         href: publications.qmd
       - href: files/moreno_cv.pdf
