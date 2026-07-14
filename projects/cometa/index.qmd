@@ -1,0 +1,36 @@
+---
+title: "COMETA — Cocoa Metabolomics"
+description: "Six-year interdisciplinary research initiative mapping cocoa's flavor chemistry"
+image: thumbnail.jpg
+date: "2016-02-01"
+categories: [PhD, Bayesian, R, Stan, GLMM]
+---
+
+![Photo by [Ly Le Minh](https://unsplash.com/photos/cacao-fruits-jF3zJ1EFuNM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](thumbnail.jpg){width="50%" target="_blank"}
+
+COMETA (COcoa METAbolomics) was a six-year interdisciplinary research initiative between Jacobs University Bremen and Barry Callebaut, aimed at mapping the roughly 20,000 molecules that give cocoa its taste, aroma, and flavor — from raw bean to finished chocolate. I joined the project in 2016 as a PhD student, contributing to two areas of the research below. [Learn more about COMETA](http://mullrich.user.jacobs-university.de/cocoa-metabolomics/){target="_blank"}.
+
+::: {.subproject-grid}
+
+::: {.subproject-card}
+### Bayesian Kinetic Modeling of Fermentation
+
+My core PhD research: developing kinetic models of cocoa bean fermentation using **Bayesian methods coded in [Stan](https://mc-stan.org/){target="_blank"}** to fit systems of ordinary differential equations to fermentation trial data.
+
+Presented at **StanCon 2019**, Cambridge — [view notebook](https://mmorenozam.github.io/stan2019/){target="_blank"}.
+
+`Stan` `Bayesian Modeling` `ODE Systems` `R`
+:::
+
+::: {.subproject-card}
+### Carbohydrate Kinetics — Statistical Consulting
+
+Collaborated with experimentalists as statistical consultant, resulting in a co-authored publication on low-molecular-weight carbohydrate changes during fermentation, using **Generalized Linear Mixed Models (GLMM)**.
+
+Published in [Food Research International (2020)](https://doi.org/10.1016/j.foodres.2019.108865){target="_blank"}.
+
+`GLMM` `R` `Statistical Consulting`
+:::
+
+:::
+

@@ -1,34 +1,45 @@
 ---
 title: "Skills"
 page-layout: full
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 ## Core Technical Skills
 
-::: {.skills-grid}
-`R` `SAS` `SQL` `Stan` `Python (basic-intermediate)` `Bayesian Modeling` `Generalized Linear Mixed Models (GLMM)` `Experimental & Clinical Trial Design` `Statistical Consulting` `Data Wrangling & Cleaning` `Reproducible Reporting (Quarto/R Markdown)`
+::: skills-grid
+`R` `SAS` `SQL` `Stan` `Python (basic-intermediate)` `Bayesian Modeling`
+`Generalized Linear Mixed Models (GLMM)`
+`Experimental & Clinical Trial Design` `Statistical Consulting`
+`Data Wrangling & Cleaning` `Reproducible Reporting (Quarto/R Markdown)`
 :::
 
 ## Specializations
 
-#### Clinical Trials Operations Specialization
-**Johns Hopkins University** — Coursera · [<small>view specialization certificate</small>](https://www.coursera.org/account/accomplishments/specialization/2FI5D06DC5R7){target="_blank"}
+-   **Clinical Trials Operations Specialization** **Johns Hopkins
+    University** — Coursera · [<small>view specialization
+    certificate</small>](https://www.coursera.org/account/accomplishments/specialization/2FI5D06DC5R7){target="_blank"}
 
-Four-course specialization covering clinical trial design, operations management, data management & quality assurance, and results analysis/presentation.
-[View credentials →](/certifications.qmd#clinical-trials)
+Four-course specialization covering clinical trial design, operations
+management, data management & quality assurance, and results
+analysis/presentation. 
+<!-- [View credentials→](/certifications.qmd#clinical-trials) -->
 
-#### Google Data Analytics Specialization
-**Google** — Coursera *(in progress)*
+-   **Google Data Analytics Specialization** **Google** — Coursera *(in
+    progress)*
 
-Covers the full data analysis lifecycle — from data cleaning and preparation to exploration and data-driven decision-making.
-[View credentials →](/certifications.qmd#google-data-analytics)
+Covers the full data analysis lifecycle — from data cleaning and
+preparation to exploration and data-driven decision-making. 
+<!-- [View credentials →](/certifications.qmd#google-data-analytics) -->
 
-#### SQL Fundamentals
-**DataCamp** *(in progress)*
+-   **SQL Fundamentals** **DataCamp** *(in progress)*
 
-Skill track covering SQL querying, joins, and intermediate query techniques across relational databases.
-[View credentials →](/certifications.qmd#sql-fundamentals)
+Skill track covering SQL querying, joins, and intermediate query
+techniques across relational databases. 
+<!-- [View credentials→](/certifications.qmd#sql-fundamentals) -->
 
----
 
-For a complete, detailed list of all courses and verification links, see the [full certification history](/certifications.qmd).
+
+For a complete, detailed list of all courses and verification links, see
+the [full certification history](/certifications.qmd).
