@@ -49,18 +49,11 @@
     "text": "J. Langbein. M. Moreno-Zambrano and K. Siebert. How do goats “read” 2D-images of familiar and unfamiliar conspecifics?. Frontiers in Psychology, 14, 2023. \n\n\n\n\n\n\nM. Moreno-Zambrano, M. S. Ullrich, and M-T. Hütt. Exploring cocoa bean fermentation mechanisms by kinetic modelling. Royal Society Open Science, 9(2), 2022. \n\n\n\n\n\n\nR. Megias-Perez, M. Moreno-Zambrano, B. Behrends, M. Corno, and N. Kuhnert. Monitoring the changes of low molecular weight carbohydrates in cocoa beans during spontaneous fermentation: a chemometric and kinetic approach. Food Research International, 2019. \n\n\n\n\n\n\nM. Moreno-Zambrano, S. Grimbs, M. S. Ullrich, and M-T. Hütt. A mathematical model of cocoa bean fermentation. Royal Society Open Science, 5(10), 2018. \n\n\n\n\n\n\nF. J. Flores, S. M. Marek, J. A. Anderson, T. K. Mitchell, M. Moreno-Zambrano, and N. R. Walker. Reactive oxygen species production and alternative hosts of spring dead spot-causing fungi. International Turfgrass Society and ACSESS, 13:213–224, 2017."
   },
   {
-    "objectID": "projects/cometa-cocoa/index.html",
-    "href": "projects/cometa-cocoa/index.html",
-    "title": "COMETA — Cocoa Metabolomics",
-    "section": "",
-    "text": "Photo by Trnava University\n\n\nCOMETA (COcoa METAbolomics) was a six-year interdisciplinary research initiative between Jacobs University Bremen and Barry Callebaut, aimed at mapping the roughly 20,000 molecules that give cocoa its taste, aroma, and flavor — from raw bean to finished chocolate. I joined the project in 2016 as a PhD student, contributing to two areas of the research: kinetic modelling of the fermentation process, and statistical consulting on a related metabolomics study. Learn more about COMETA."
-  },
-  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n    \n  \n\n\n\n\n\n\n\n\n\n\nCOMETA — Cocoa Metabolomics\n\n\nCOMETA (COcoa METAbolomics) was a six-year interdisciplinary research initiative\n\n\n\n\n\n\n\n\n\n\n\n\nCarbohydrate Kinetics During Cocoa Bean Fermentation\n\n\nCollaboration in determining carbohydrate kinetics in the fermentation process.\n\n\n\n\n\n\n\n\n\n\n\n\nBayesian Kinetic Modelling of Cocoa Bean Fermentation\n\n\nODE modelling of cocoa bean fermentation kinetics using Stan\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n      Default\n      \n        Title\n      \n    \n  \n\n\n\n\n\n\n\n\n\n\nCOMETA — Cocoa Metabolomics\n\n\nSix-year interdisciplinary research initiative mapping cocoa’s flavor chemistry\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html#education",
@@ -116,7 +109,7 @@
     "href": "certifications.html#standalone-courses",
     "title": "Certifications",
     "section": "Standalone Courses",
-    "text": "Standalone Courses\n\nIntroduction to Clinical Data Science — Coursera\nIntroduction to Statistics & Data Analysis in Public Health — Coursera\nGetting Started with SAS Programming — Coursera"
+    "text": "Standalone Courses\n\nIntroduction to Clinical Data Science — Coursera\nIntroduction to Statistics & Data Analysis in Public Health — Coursera\nGetting Started with SAS Programming — Coursera\nPharmacokinetics — Coursera"
   },
   {
     "objectID": "impressum.html",
@@ -196,18 +189,11 @@
     "text": "Contact\nIf you contact me via email, the information you provide will only be used to respond to your request."
   },
   {
-    "objectID": "projects/cometa-carbs/index.html",
-    "href": "projects/cometa-carbs/index.html",
-    "title": "Carbohydrate Kinetics During Cocoa Bean Fermentation",
+    "objectID": "projects/cometa/index.html",
+    "href": "projects/cometa/index.html",
+    "title": "COMETA — Cocoa Metabolomics",
     "section": "",
-    "text": "Alongside my main research, I collaborated with experimentalists in the group as a statistical consultant. One such collaboration led to a co-authored publication on changes in low-molecular-weight carbohydrates during cocoa fermentation, for which I applied Generalized Linear Mixed Models (GLMM) to characterize the differing degradation kinetics of these compounds.\nRead the full paper: Food Research International (2020)."
-  },
-  {
-    "objectID": "projects/cometa-fermentation/index.html",
-    "href": "projects/cometa-fermentation/index.html",
-    "title": "Bayesian Kinetic Modelling of Cocoa Bean Fermentation",
-    "section": "",
-    "text": "Photo by Ly Le Minh\n\n\nMy core PhD research focused on developing kinetic models of cocoa bean fermentation using Bayesian methods coded in Stan to fit systems of ordinary differential equations to previously published fermentation trial data. This work allowed us to quantitatively describe how key biochemical compounds evolve during fermentation — a critical step in determining the final flavor profile of chocolate.\nI presented a summary of this research at StanCon 2019 in Cambridge. You can view the accompanying notebook here."
+    "text": "Photo by Ly Le Minh\n\n\nCOMETA (COcoa METAbolomics) was a six-year interdisciplinary research initiative between Jacobs University Bremen and Barry Callebaut, aimed at mapping the roughly 20,000 molecules that give cocoa its taste, aroma, and flavor — from raw bean to finished chocolate. I joined the project in 2016 as a PhD student, contributing to two areas of the research below. Learn more about COMETA.\n\n\nBayesian Kinetic Modeling of Fermentation\nMy core PhD research: developing kinetic models of cocoa bean fermentation using Bayesian methods coded in Stan to fit systems of ordinary differential equations to fermentation trial data.\nPresented at StanCon 2019, Cambridge — view notebook.\nStan Bayesian Modeling ODE Systems R\n\n\nCarbohydrate Kinetics — Statistical Consulting\nCollaborated with experimentalists as statistical consultant, resulting in a co-authored publication on low-molecular-weight carbohydrate changes during fermentation, using Generalized Linear Mixed Models (GLMM).\nPublished in Food Research International (2020).\nGLMM R Statistical Consulting"
   },
   {
     "objectID": "skills.html",
@@ -228,6 +214,6 @@
     "href": "skills.html#specializations",
     "title": "Skills",
     "section": "Specializations",
-    "text": "Specializations\n\nClinical Trials Operations Specialization\nJohns Hopkins University — Coursera · view specialization certificate\nFour-course specialization covering clinical trial design, operations management, data management & quality assurance, and results analysis/presentation. View credentials →\n\n\nGoogle Data Analytics Specialization\nGoogle — Coursera (in progress)\nCovers the full data analysis lifecycle — from data cleaning and preparation to exploration and data-driven decision-making. View credentials →\n\n\nSQL Fundamentals\nDataCamp (in progress)\nSkill track covering SQL querying, joins, and intermediate query techniques across relational databases. View credentials →\n\nFor a complete, detailed list of all courses and verification links, see the full certification history."
+    "text": "Specializations\n\nClinical Trials Operations Specialization Johns Hopkins University — Coursera · view specialization certificate\n\nFour-course specialization covering clinical trial design, operations management, data management & quality assurance, and results analysis/presentation. \n\nGoogle Data Analytics Specialization Google — Coursera (in progress)\n\nCovers the full data analysis lifecycle — from data cleaning and preparation to exploration and data-driven decision-making. \n\nSQL Fundamentals DataCamp (in progress)\n\nSkill track covering SQL querying, joins, and intermediate query techniques across relational databases. \nFor a complete, detailed list of all courses and verification links, see the full certification history."
   }
 ]

@@ -384,3 +384,41 @@
   background-color: color-mix(in srgb, var(--bs-primary) 15%, transparent);
   border-color: color-mix(in srgb, var(--bs-primary) 35%, transparent);
 }
+
+.subproject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.subproject-card {
+  border: 1px solid color-mix(in srgb, var(--bs-primary) 25%, transparent);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  background-color: color-mix(in srgb, var(--bs-primary) 6%, transparent);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.subproject-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.subproject-card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.subproject-card code {
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.78em;
+  font-weight: 500;
+  font-family: inherit;
+  white-space: nowrap;
+  margin-right: 0.3rem;
+  background-color: color-mix(in srgb, var(--bs-primary) 15%, transparent);
+  color: var(--bs-primary);
+  border: 1px solid color-mix(in srgb, var(--bs-primary) 35%, transparent);
+}
