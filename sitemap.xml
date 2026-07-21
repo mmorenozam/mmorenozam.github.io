@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mauricio-moreno.net/teaching.html</loc>
-    <lastmod>2026-07-14T06:16:05.236Z</lastmod>
+    <lastmod>2026-07-21T17:56:45.312Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/publications.html</loc>
-    <lastmod>2026-07-14T06:16:05.234Z</lastmod>
+    <lastmod>2026-07-21T17:56:45.310Z</lastmod>
   </url>
   <url>
-    <loc>https://mauricio-moreno.net/projects.html</loc>
-    <lastmod>2026-07-14T06:16:05.228Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricio-moreno.net/index.html</loc>
-    <lastmod>2026-07-14T06:16:05.228Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricio-moreno.net/certifications.html</loc>
-    <lastmod>2026-07-14T06:16:05.223Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricio-moreno.net/impressum.html</loc>
-    <lastmod>2026-07-14T06:16:05.228Z</lastmod>
+    <loc>https://mauricio-moreno.net/projects/bayesian-superiority-rcbd/index.html</loc>
+    <lastmod>2026-07-21T17:56:45.297Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/privacy.html</loc>
-    <lastmod>2026-07-14T06:16:05.228Z</lastmod>
+    <lastmod>2026-07-21T17:56:45.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/impressum.html</loc>
+    <lastmod>2026-07-21T17:56:45.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/certifications.html</loc>
+    <lastmod>2026-07-21T17:56:45.277Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/index.html</loc>
+    <lastmod>2026-07-21T17:56:45.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/projects.html</loc>
+    <lastmod>2026-07-21T17:56:45.282Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/projects/cometa/index.html</loc>
-    <lastmod>2026-07-14T06:16:05.229Z</lastmod>
+    <lastmod>2026-07-21T17:56:45.303Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/skills.html</loc>
-    <lastmod>2026-07-14T06:16:05.236Z</lastmod>
+    <lastmod>2026-07-21T17:56:45.312Z</lastmod>
   </url>
 </urlset>
