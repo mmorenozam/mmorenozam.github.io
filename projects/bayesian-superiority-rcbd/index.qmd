@@ -2,7 +2,7 @@
 title: "Bayesian superiority in Agriculture"
 description: "Significant statistical differences in agriculture are seldomly seen, here an alternative"
 image: thumbnail.png
-date: "2026-07-21"
+date: "2026-07-22"
 format:
   html: 
     code-fold: true
