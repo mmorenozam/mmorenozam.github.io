@@ -53,7 +53,7 @@ Bioestadística en R es un curso con enfoque práctico orientado al análisis de
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/curi.JPG)
+![](files/images/curi.png)
 
 :::
 
@@ -79,7 +79,7 @@ Introducción a la Estadística para Ciencias Biológicas con R es un curso orie
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/quarto.JPG)
+![](files/images/quarto.png)
 
 :::
 
@@ -104,7 +104,7 @@ Creación de Reportes con Quarto y R es un curso práctico enfocado en la elabor
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/report.JPG)
+![](files/images/report.png)
 
 :::
 
@@ -130,7 +130,7 @@ Introducción a la visualización de datos y creación de reportes en R es un cu
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-2}
-![](files/images/applied.JPG)
+![](files/images/applied.png)
 
 :::
 
