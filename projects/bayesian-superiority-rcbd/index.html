@@ -989,17 +989,23 @@ Y_{ijk} = \mu + \tau_i + u_j + b_{k(j)} + g_{ij} + \epsilon_{ijk}
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>meta_model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(y <span class="sc">~</span> Treatment <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Trial) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Trial<span class="sc">:</span>Block) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Treatment<span class="sc">:</span>Trial), </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data =</span> design_data)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>estimated_means <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(meta_model, <span class="at">specs =</span> <span class="sc">~</span> Treatment)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>estimated_means</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>estimated_means <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(meta_model, <span class="at">specs =</span> <span class="sc">~</span> Treatment)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Cannot use mode = "kenward-roger" because *pbkrtest* package is not installed</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>estimated_means</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code> Treatment   emmean   SE   df lower.CL upper.CL
- Treatment_1   99.6 1.86 7.35     95.3      104
- Treatment_2   99.0 1.86 7.35     94.7      103
- Treatment_3  103.2 1.86 7.35     98.9      108
- Treatment_4  105.5 1.86 7.35    101.1      110
+ Treatment_1   99.6 1.86 9.43     95.4      104
+ Treatment_2   99.0 1.86 9.43     94.9      103
+ Treatment_3  103.2 1.86 9.43     99.0      107
+ Treatment_4  105.5 1.86 9.43    101.3      110
 
-Degrees-of-freedom method: kenward-roger 
+Degrees-of-freedom method: satterthwaite 
 Confidence level used: 0.95 </code></pre>
 </div>
 </div>
@@ -1007,15 +1013,15 @@ Confidence level used: 0.95 </code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrast</span>(estimated_means, <span class="at">method =</span> <span class="st">"trt.vs.ctrl"</span>, <span class="at">ref =</span> <span class="st">"Treatment_1"</span>, <span class="at">adjust =</span> <span class="st">"dunnett"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrast</span>(estimated_means, <span class="at">method =</span> <span class="st">"trt.vs.ctrl"</span>, <span class="at">ref =</span> <span class="st">"Treatment_1"</span>, <span class="at">adjust =</span> <span class="st">"dunnett"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code> contrast                  estimate   SE df t.ratio p.value
- Treatment_2 - Treatment_1   -0.551 2.39  6  -0.231  0.9791
- Treatment_3 - Treatment_1    3.615 2.39  6   1.514  0.3833
- Treatment_4 - Treatment_1    5.879 2.39  6   2.462  0.1181
+<pre><code> contrast                  estimate   SE  df t.ratio p.value
+ Treatment_2 - Treatment_1   -0.551 2.39 6.9  -0.231  0.9790
+ Treatment_3 - Treatment_1    3.615 2.39 6.9   1.514  0.3739
+ Treatment_4 - Treatment_1    5.879 2.39 6.9   2.462  0.1072
 
-Degrees-of-freedom method: kenward-roger 
+Degrees-of-freedom method: satterthwaite 
 P value adjustment: dunnettx method for 3 tests </code></pre>
 </div>
 </div>
@@ -1028,107 +1034,107 @@ P value adjustment: dunnettx method for 3 tests </code></pre>
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>simulate_and_test <span class="ot">&lt;-</span> <span class="cf">function</span>(n_trials, </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">n_blocks =</span> <span class="dv">3</span>, </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">n_treatments =</span> <span class="dv">4</span>,</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">mu =</span> <span class="dv">100</span>, </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>                              <span class="at">trt_effects =</span> <span class="fu">c</span>(</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">Treatment_1 =</span> <span class="dv">0</span>,</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">Treatment_2 =</span> <span class="dv">0</span>,</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">Treatment_3 =</span> <span class="dv">3</span>,</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                                <span class="at">Treatment_4 =</span> <span class="dv">5</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                              ),</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>                              <span class="at">trial_sd      =</span> <span class="dv">10</span>,</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>                              <span class="at">block_sd      =</span> <span class="dv">2</span>,</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>                              <span class="at">gxe_sd        =</span> <span class="dv">3</span>,</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>                              <span class="at">residual_sd   =</span> <span class="dv">4</span>) {</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  design_data <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Trial     =</span> <span class="fu">factor</span>(<span class="dv">1</span><span class="sc">:</span>n_trials),</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Block     =</span> <span class="fu">factor</span>(<span class="dv">1</span><span class="sc">:</span>n_blocks),</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">Treatment =</span> <span class="fu">factor</span>(<span class="fu">names</span>(trt_effects), <span class="at">levels =</span> <span class="fu">names</span>(trt_effects))</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  design_data<span class="sc">$</span>Trial_Block <span class="ot">&lt;-</span></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">interaction</span>(design_data<span class="sc">$</span>Trial,</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>                design_data<span class="sc">$</span>Block,</span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>                <span class="at">sep =</span> <span class="st">":"</span>)</span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>  design_data<span class="sc">$</span>Treatment_Trial <span class="ot">&lt;-</span></span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">interaction</span>(design_data<span class="sc">$</span>Treatment,</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>                design_data<span class="sc">$</span>Trial,</span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">sep =</span> <span class="st">":"</span>)</span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>  trial_effects <span class="ot">&lt;-</span></span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="fu">nlevels</span>(design_data<span class="sc">$</span>Trial),</span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean =</span> <span class="dv">0</span>,</span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> trial_sd)</span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(trial_effects) <span class="ot">&lt;-</span> <span class="fu">levels</span>(design_data<span class="sc">$</span>Trial)</span>
-<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>  block_effects <span class="ot">&lt;-</span></span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="fu">nlevels</span>(design_data<span class="sc">$</span>Trial_Block),</span>
-<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean =</span> <span class="dv">0</span>,</span>
-<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> block_sd)</span>
-<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(block_effects) <span class="ot">&lt;-</span> <span class="fu">levels</span>(design_data<span class="sc">$</span>Trial_Block)</span>
-<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>  gxe_effects <span class="ot">&lt;-</span></span>
-<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="fu">nlevels</span>(design_data<span class="sc">$</span>Treatment_Trial),</span>
-<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean =</span> <span class="dv">0</span>,</span>
-<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> gxe_sd)</span>
-<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(gxe_effects) <span class="ot">&lt;-</span> <span class="fu">levels</span>(design_data<span class="sc">$</span>Treatment_Trial)</span>
-<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>  residual_errors <span class="ot">&lt;-</span></span>
-<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="fu">nrow</span>(design_data),</span>
-<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean =</span> <span class="dv">0</span>,</span>
-<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> residual_sd)</span>
-<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>  design_data<span class="sc">$</span>y <span class="ot">&lt;-</span></span>
-<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>    mu <span class="sc">+</span></span>
-<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>    trt_effects[design_data<span class="sc">$</span>Treatment] <span class="sc">+</span></span>
-<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>    trial_effects[design_data<span class="sc">$</span>Trial] <span class="sc">+</span></span>
-<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a>    block_effects[design_data<span class="sc">$</span>Trial_Block] <span class="sc">+</span></span>
-<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>    gxe_effects[design_data<span class="sc">$</span>Treatment_Trial] <span class="sc">+</span></span>
-<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>    residual_errors</span>
-<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tryCatch</span>({</span>
-<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>    mod <span class="ot">&lt;-</span> <span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(</span>
-<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a>      <span class="fu">lmer</span>(y <span class="sc">~</span> Treatment <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>Trial) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>Trial<span class="sc">:</span>Block) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>Treatment<span class="sc">:</span>Trial),</span>
-<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> design_data)</span>
-<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>    ))</span>
-<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a>    em <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(mod, <span class="at">specs =</span> <span class="sc">~</span> Treatment)</span>
-<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a>    ct <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">contrast</span>(em, <span class="at">method =</span> <span class="st">"trt.vs.ctrl"</span>, <span class="at">ref =</span> <span class="st">"Treatment_1"</span>, <span class="at">adjust =</span> <span class="st">"dunnett"</span>))</span>
-<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a>    ct<span class="sc">$</span>p.value[ct<span class="sc">$</span>contrast <span class="sc">==</span> <span class="st">"Treatment_4 - Treatment_1"</span>]</span>
-<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) <span class="cn">NA</span>, <span class="at">warning =</span> <span class="cf">function</span>(w) <span class="cn">NA</span>)</span>
-<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">624</span>)</span>
-<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>n_trials_grid <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
-<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>n_reps <span class="ot">&lt;-</span> <span class="dv">250</span></span>
-<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a>power_results <span class="ot">&lt;-</span> <span class="fu">lapply</span>(n_trials_grid, <span class="cf">function</span>(nt) {</span>
-<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a>  pvals <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">replicate</span>(n_reps, <span class="fu">simulate_and_test</span>(<span class="at">n_trials =</span> nt)))</span>
-<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">n_trials =</span> nt, <span class="at">power =</span> <span class="fu">mean</span>(pvals <span class="sc">&lt;</span> <span class="fl">0.05</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a>power_df <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, power_results)</span>
-<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(power_df, <span class="fu">aes</span>(<span class="at">x =</span> n_trials, <span class="at">y =</span> power)) <span class="sc">+</span></span>
-<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
-<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#2c7fb8"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#2c7fb8"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
-<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">max</span>(power_df<span class="sc">$</span>n_trials), <span class="at">y =</span> <span class="fl">0.8</span>, <span class="at">label =</span> <span class="st">"80% power"</span>,</span>
-<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a>           <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.6</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">color =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
-<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Empirical Power to Detect a 5% Yield Improvement"</span>,</span>
-<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Dunnett's test, Treatment 4 vs. reference, alpha = 0.05"</span>,</span>
-<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of trials"</span>, <span class="at">y =</span> <span class="st">"Power"</span></span>
-<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
-<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>simulate_and_test <span class="ot">&lt;-</span> <span class="cf">function</span>(n_trials, </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">n_blocks =</span> <span class="dv">3</span>, </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">n_treatments =</span> <span class="dv">4</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">mu =</span> <span class="dv">100</span>, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                              <span class="at">trt_effects =</span> <span class="fu">c</span>(</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                                <span class="at">Treatment_1 =</span> <span class="dv">0</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                                <span class="at">Treatment_2 =</span> <span class="dv">0</span>,</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                                <span class="at">Treatment_3 =</span> <span class="dv">3</span>,</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>                                <span class="at">Treatment_4 =</span> <span class="dv">5</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>                              ),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>                              <span class="at">trial_sd      =</span> <span class="dv">10</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>                              <span class="at">block_sd      =</span> <span class="dv">2</span>,</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>                              <span class="at">gxe_sd        =</span> <span class="dv">3</span>,</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>                              <span class="at">residual_sd   =</span> <span class="dv">4</span>) {</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  design_data <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">Trial     =</span> <span class="fu">factor</span>(<span class="dv">1</span><span class="sc">:</span>n_trials),</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">Block     =</span> <span class="fu">factor</span>(<span class="dv">1</span><span class="sc">:</span>n_blocks),</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">Treatment =</span> <span class="fu">factor</span>(<span class="fu">names</span>(trt_effects), <span class="at">levels =</span> <span class="fu">names</span>(trt_effects))</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  design_data<span class="sc">$</span>Trial_Block <span class="ot">&lt;-</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">interaction</span>(design_data<span class="sc">$</span>Trial,</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>                design_data<span class="sc">$</span>Block,</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>                <span class="at">sep =</span> <span class="st">":"</span>)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>  design_data<span class="sc">$</span>Treatment_Trial <span class="ot">&lt;-</span></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">interaction</span>(design_data<span class="sc">$</span>Treatment,</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>                design_data<span class="sc">$</span>Trial,</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>                <span class="at">sep =</span> <span class="st">":"</span>)</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>  trial_effects <span class="ot">&lt;-</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="fu">nlevels</span>(design_data<span class="sc">$</span>Trial),</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean =</span> <span class="dv">0</span>,</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> trial_sd)</span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(trial_effects) <span class="ot">&lt;-</span> <span class="fu">levels</span>(design_data<span class="sc">$</span>Trial)</span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>  block_effects <span class="ot">&lt;-</span></span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="fu">nlevels</span>(design_data<span class="sc">$</span>Trial_Block),</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean =</span> <span class="dv">0</span>,</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> block_sd)</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(block_effects) <span class="ot">&lt;-</span> <span class="fu">levels</span>(design_data<span class="sc">$</span>Trial_Block)</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>  gxe_effects <span class="ot">&lt;-</span></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="fu">nlevels</span>(design_data<span class="sc">$</span>Treatment_Trial),</span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean =</span> <span class="dv">0</span>,</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> gxe_sd)</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(gxe_effects) <span class="ot">&lt;-</span> <span class="fu">levels</span>(design_data<span class="sc">$</span>Treatment_Trial)</span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>  residual_errors <span class="ot">&lt;-</span></span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="fu">nrow</span>(design_data),</span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>          <span class="at">mean =</span> <span class="dv">0</span>,</span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> residual_sd)</span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>  design_data<span class="sc">$</span>y <span class="ot">&lt;-</span></span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a>    mu <span class="sc">+</span></span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a>    trt_effects[design_data<span class="sc">$</span>Treatment] <span class="sc">+</span></span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a>    trial_effects[design_data<span class="sc">$</span>Trial] <span class="sc">+</span></span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a>    block_effects[design_data<span class="sc">$</span>Trial_Block] <span class="sc">+</span></span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a>    gxe_effects[design_data<span class="sc">$</span>Treatment_Trial] <span class="sc">+</span></span>
+<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>    residual_errors</span>
+<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tryCatch</span>({</span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a>    mod <span class="ot">&lt;-</span> <span class="fu">suppressMessages</span>(<span class="fu">suppressWarnings</span>(</span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>      <span class="fu">lmer</span>(y <span class="sc">~</span> Treatment <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>Trial) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>Trial<span class="sc">:</span>Block) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>Treatment<span class="sc">:</span>Trial),</span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> design_data)</span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a>    em <span class="ot">&lt;-</span> <span class="fu">emmeans</span>(mod, <span class="at">specs =</span> <span class="sc">~</span> Treatment)</span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>    ct <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">contrast</span>(em, <span class="at">method =</span> <span class="st">"trt.vs.ctrl"</span>, <span class="at">ref =</span> <span class="st">"Treatment_1"</span>, <span class="at">adjust =</span> <span class="st">"dunnett"</span>))</span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a>    ct<span class="sc">$</span>p.value[ct<span class="sc">$</span>contrast <span class="sc">==</span> <span class="st">"Treatment_4 - Treatment_1"</span>]</span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a>  }, <span class="at">error =</span> <span class="cf">function</span>(e) <span class="cn">NA</span>, <span class="at">warning =</span> <span class="cf">function</span>(w) <span class="cn">NA</span>)</span>
+<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">624</span>)</span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a>n_trials_grid <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>)</span>
+<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>n_reps <span class="ot">&lt;-</span> <span class="dv">250</span></span>
+<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a>power_results <span class="ot">&lt;-</span> <span class="fu">lapply</span>(n_trials_grid, <span class="cf">function</span>(nt) {</span>
+<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a>  pvals <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">replicate</span>(n_reps, <span class="fu">simulate_and_test</span>(<span class="at">n_trials =</span> nt)))</span>
+<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">n_trials =</span> nt, <span class="at">power =</span> <span class="fu">mean</span>(pvals <span class="sc">&lt;</span> <span class="fl">0.05</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a>power_df <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, power_results)</span>
+<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(power_df, <span class="fu">aes</span>(<span class="at">x =</span> n_trials, <span class="at">y =</span> power)) <span class="sc">+</span></span>
+<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#2c7fb8"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#2c7fb8"</span>, <span class="at">size =</span> <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fu">max</span>(power_df<span class="sc">$</span>n_trials), <span class="at">y =</span> <span class="fl">0.8</span>, <span class="at">label =</span> <span class="st">"80% power"</span>,</span>
+<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>           <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.6</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">color =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Empirical Power to Detect a 5% Yield Improvement"</span>,</span>
+<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Dunnett's test, Treatment 4 vs. reference, alpha = 0.05"</span>,</span>
+<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Number of trials"</span>, <span class="at">y =</span> <span class="st">"Power"</span></span>
+<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a>p2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell" data-layout-align="center">
@@ -1150,44 +1156,44 @@ P value adjustment: dunnettx method for 3 tests </code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">100</span>, <span class="dv">20</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">student_t</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">student_t</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>bayes_mod <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  y <span class="sc">~</span> Treatment <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Trial) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Trial<span class="sc">:</span>Block) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Treatment<span class="sc">:</span>Trial),</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> design_data,</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">4</span>, <span class="at">iter =</span> <span class="dv">8000</span>, <span class="at">warmup =</span> <span class="dv">4000</span>, <span class="at">cores =</span> <span class="dv">4</span>,</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">324</span>,</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">sample_prior =</span> <span class="st">"yes"</span>,</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.999</span>, <span class="at">max_treedepth =</span> <span class="dv">12</span>),</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>draws <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(bayes_mod)</span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>poc_threshold <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>summarize_treatment <span class="ot">&lt;-</span> <span class="cf">function</span>(delta, label, prior_vector) {</span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>  prior_odds <span class="ot">&lt;-</span> (<span class="fu">sum</span>(prior_vector <span class="sc">&gt;</span> poc_threshold)<span class="sc">/</span><span class="fu">length</span>(prior_vector))<span class="sc">/</span>(<span class="fu">sum</span>(prior_vector <span class="sc">&lt;</span> poc_threshold)<span class="sc">/</span><span class="fu">length</span>(prior_vector))</span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>  ha <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(bayes_mod, <span class="fu">paste0</span>(<span class="st">"Treatment"</span>, label, <span class="st">" &gt; "</span>, poc_threshold))</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>  posterior_odds <span class="ot">&lt;-</span> ha<span class="sc">$</span>hypothesis<span class="sc">$</span>Evid.Ratio</span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">Treatment =</span> label,</span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">P(delta &gt; 3%, meets POC)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(delta <span class="sc">&gt;=</span> poc_threshold), <span class="dv">3</span>),</span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Bayes Factor (BF10)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(posterior_odds<span class="sc">/</span>prior_odds, <span class="dv">2</span>),</span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>bf_table <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_treatment</span>(draws<span class="sc">$</span>b_TreatmentTreatment_2, <span class="st">"Treatment_2"</span>, draws<span class="sc">$</span>prior_b),</span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_treatment</span>(draws<span class="sc">$</span>b_TreatmentTreatment_3, <span class="st">"Treatment_3"</span>, draws<span class="sc">$</span>prior_b),</span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_treatment</span>(draws<span class="sc">$</span>b_TreatmentTreatment_4, <span class="st">"Treatment_4"</span>, draws<span class="sc">$</span>prior_b)</span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>priors <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">100</span>, <span class="dv">20</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">student_t</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">prior</span>(<span class="fu">student_t</span>(<span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">10</span>), <span class="at">class =</span> <span class="st">"sigma"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>bayes_mod <span class="ot">&lt;-</span> <span class="fu">brm</span>(</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  y <span class="sc">~</span> Treatment <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Trial) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Trial<span class="sc">:</span>Block) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Treatment<span class="sc">:</span>Trial),</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> design_data,</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">prior =</span> priors,</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">chains =</span> <span class="dv">4</span>, <span class="at">iter =</span> <span class="dv">8000</span>, <span class="at">warmup =</span> <span class="dv">4000</span>, <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">324</span>,</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">sample_prior =</span> <span class="st">"yes"</span>,</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">list</span>(<span class="at">adapt_delta =</span> <span class="fl">0.999</span>, <span class="at">max_treedepth =</span> <span class="dv">12</span>),</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">refresh =</span> <span class="dv">0</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>draws <span class="ot">&lt;-</span> <span class="fu">as_draws_df</span>(bayes_mod)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>poc_threshold <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>summarize_treatment <span class="ot">&lt;-</span> <span class="cf">function</span>(delta, label, prior_vector) {</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  prior_odds <span class="ot">&lt;-</span> (<span class="fu">sum</span>(prior_vector <span class="sc">&gt;</span> poc_threshold)<span class="sc">/</span><span class="fu">length</span>(prior_vector))<span class="sc">/</span>(<span class="fu">sum</span>(prior_vector <span class="sc">&lt;</span> poc_threshold)<span class="sc">/</span><span class="fu">length</span>(prior_vector))</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>  ha <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(bayes_mod, <span class="fu">paste0</span>(<span class="st">"Treatment"</span>, label, <span class="st">" &gt; "</span>, poc_threshold))</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  posterior_odds <span class="ot">&lt;-</span> ha<span class="sc">$</span>hypothesis<span class="sc">$</span>Evid.Ratio</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">Treatment =</span> label,</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">P(delta &gt; 3%, meets POC)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">mean</span>(delta <span class="sc">&gt;=</span> poc_threshold), <span class="dv">3</span>),</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">`</span><span class="at">Bayes Factor (BF10)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(posterior_odds<span class="sc">/</span>prior_odds, <span class="dv">2</span>),</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>bf_table <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_treatment</span>(draws<span class="sc">$</span>b_TreatmentTreatment_2, <span class="st">"Treatment_2"</span>, draws<span class="sc">$</span>prior_b),</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_treatment</span>(draws<span class="sc">$</span>b_TreatmentTreatment_3, <span class="st">"Treatment_3"</span>, draws<span class="sc">$</span>prior_b),</span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize_treatment</span>(draws<span class="sc">$</span>b_TreatmentTreatment_4, <span class="st">"Treatment_4"</span>, draws<span class="sc">$</span>prior_b)</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>From the posterior draws, we can ask exactly the question the proof-of-concept criterion cares about, which is not “is p &lt; 0.05,” but <strong>“how probable is a 3%-or-greater improvement, given what we observed?”</strong> and <strong>how strongly do the data themselves favor a real difference over no difference at all, independent of how we choose to threshold a probability?</strong></p>
@@ -1233,7 +1239,7 @@ P value adjustment: dunnettx method for 3 tests </code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bf_table, <span class="at">align =</span> <span class="st">"lcc"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(bf_table, <span class="at">align =</span> <span class="st">"lcc"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell">
