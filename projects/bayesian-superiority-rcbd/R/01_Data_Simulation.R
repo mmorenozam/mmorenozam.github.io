@@ -5,7 +5,7 @@ library(emmeans)
 
 # 1. We set the general parameters for the simulation
 
-set.seed(624)
+set.seed(76)
 
 n_trials     <- 3
 n_blocks     <- 3
@@ -24,9 +24,9 @@ trt_effects <- c(
 
 # Standard deviations of random effects
 trial_sd      <- 10
-block_sd      <- 2.5
-gxe_sd        <- 2
-residual_sd   <- 5
+block_sd      <- 2
+gxe_sd        <- 3
+residual_sd   <- 4
 
 
 # 2. Experimental layout 
@@ -119,5 +119,7 @@ meta_model <- lmer(y ~ Treatment + (1 | Trial) + (1 | Trial:Block) + (1 | Treatm
                    data = design_data)
 
 summary(meta_model)
+
+emmeans(meta_model, specs = ~Treatment)
 
 contrast(emmeans(meta_model, specs = ~ Treatment), method = "trt.vs.ctrl", ref = "Treatment_1", adjust = "dunnett")

@@ -2,7 +2,7 @@ library(brms)
 
 # 1. We set the general parameters for the simulation
 
-set.seed(624)
+set.seed(76)
 
 n_trials     <- 3
 n_blocks     <- 3
@@ -21,9 +21,9 @@ trt_effects <- c(
 
 # Standard deviations of random effects
 trial_sd      <- 10
-block_sd      <- 2.5
-gxe_sd        <- 2
-residual_sd   <- 5
+block_sd      <- 2
+gxe_sd        <- 3
+residual_sd   <- 4
 
 
 # 2. Experimental layout 
@@ -97,15 +97,51 @@ priors <- c(
   prior(student_t(3, 0, 10), class = "sigma")
 )
 
-bayes_mod <- brm(
-  y ~ Treatment + (1 | Trial) + (1 | Trial:Block) + (1 | Treatment:Trial),
-  data = design_data,
+# bayes_mod <- brm(
+#   y ~ Treatment + (1 | Trial) + (1 | Trial:Block) + (1 | Treatment:Trial),
+#   data = design_data,
+#   prior = priors,
+#   chains = 4, iter = 6000, warmup = 3000, cores = 4,
+#   seed = 1410,
+#   sample_prior = "yes",
+#   control = list(adapt_delta = 0.99, max_treedepth = 12),
+#   refresh = 1000
+# )
+
+# saveRDS(bayes_mod, file = here::here("projects/bayesian-superiority-rcbd/bayes_model/bayes_mod.rds"))
+
+bayes_mod <- readRDS(here::here("projects/bayesian-superiority-rcbd/bayes_model/bayes_mod.rds"))
+
+bayes_mod2 <- update(
+  bayes_mod,
+  newdata = design_data,
   prior = priors,
-  chains = 4, iter = 6000, warmup = 3000, cores = 4,
-  seed = 1410,
-  sample_prior = "yes",
-  control = list(adapt_delta = 0.99, max_treedepth = 12),
-  refresh = 1000
+  control = list(adapt_delta = 0.999, max_treedepth = 12),
+  chains = 4, iter = 8000, warmup = 4000, cores = 4,
+  recompile = FALSE
 )
 
-saveRDS(bayes_mod, file = here::here("projects/bayesian-superiority-rcbd/bayes_model/bayes_mod.rds"))
+saveRDS(bayes_mod2, file = here::here("projects/bayesian-superiority-rcbd/bayes_model/bayes_mod.rds"))
+
+draws <- as_draws_df(bayes_mod2)
+poc_threshold <- 3
+
+summarize_treatment <- function(delta, label, prior_vector) {
+  prior_odds <- (sum(prior_vector > poc_threshold)/length(prior_vector))/(sum(prior_vector < poc_threshold)/length(prior_vector))
+  ha <- hypothesis(bayes_mod, paste0("Treatment", label, " > ", poc_threshold))
+  posterior_odds <- ha$hypothesis$Evid.Ratio
+  data.frame(
+    Treatment = label,
+    `P(delta > 3%, meets POC)` = round(mean(delta >= poc_threshold), 3),
+    `Bayes Factor (BF10)` = round(posterior_odds/prior_odds, 2),
+    check.names = FALSE
+  )
+}
+
+bf_table <- bind_rows(
+  summarize_treatment(draws$b_TreatmentTreatment_2, "Treatment_2", draws$prior_b),
+  summarize_treatment(draws$b_TreatmentTreatment_3, "Treatment_3", draws$prior_b),
+  summarize_treatment(draws$b_TreatmentTreatment_4, "Treatment_4", draws$prior_b)
+)
+
+bf_table

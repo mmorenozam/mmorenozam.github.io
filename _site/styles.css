@@ -1,0 +1,424 @@
+/* css styles */
+.quarto-about-trestles{
+	max-width: 1000px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 5rem !important;
+}
+
+/* Contenedor general de las secciones */
+.profile-section {
+  max-width: 950px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+/* Columnas */
+.profile-section .columns {
+  align-items: flex-start;
+}
+
+/* Títulos */
+.profile-section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Listas */
+.profile-section ul {
+  padding-left: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Educación */
+.education-item {
+  margin-bottom: 1.5rem;
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+
+  .profile-section .columns {
+    display: block;
+  }
+
+  .profile-section .column {
+    width: 100% !important;
+    margin-bottom: 2rem;
+  }
+
+}
+
+/* =====================================================
+   EXPERIENCE TIMELINE
+   ===================================================== */
+
+.experience-section {
+
+  max-width: 1000px;
+
+  margin: 5rem auto;
+
+  display: grid;
+
+  grid-template-columns: 220px 1fr;
+
+  gap: 3rem;
+
+}
+
+
+/* Título Experience */
+
+.experience-title h2 {
+
+  margin-top: 0;
+
+  position: sticky;
+
+  top: 100px;
+
+}
+
+
+/* Contenedor del timeline */
+
+.timeline {
+
+  position: relative;
+
+  padding-left: 3rem;
+
+}
+
+
+/* Cada experiencia */
+
+.timeline-item {
+
+  position: relative;
+
+  padding-bottom: 3rem;
+
+}
+
+
+/* Segmento de línea entre experiencias */
+
+.timeline-item::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: -2rem;
+
+  top: 1.15rem;
+
+  bottom: -0.2rem;
+
+  width: 2px;
+
+  background: currentColor;
+
+  opacity: 0.2;
+
+}
+
+
+/* Último elemento sin línea abajo */
+
+.timeline-item:last-child::before {
+
+  display: none;
+
+}
+
+
+/* Círculo */
+
+.timeline-marker {
+
+  position: absolute;
+
+  left: -2.48rem;
+
+  top: 0.95rem;
+
+
+  width: 16px;
+
+  height: 16px;
+
+
+  border-radius: 50%;
+
+
+  border: 3px solid currentColor;
+
+
+  background: var(--bs-body-bg);
+
+
+  z-index: 2;
+
+}
+
+
+/* Experiencia actual */
+
+.timeline-item.current .timeline-marker {
+
+  background: currentColor;
+
+}
+
+
+
+/* Caja de contenido */
+
+.timeline-content {
+
+  padding-left: 0.5rem;
+
+}
+
+
+/* Nombre del rol */
+
+.timeline-content h3 {
+
+  margin-top: 0;
+
+  margin-bottom: .3rem;
+
+  font-size: 1.25rem;
+
+}
+
+
+/* Empresa */
+
+.company {
+
+  display: block;
+
+  font-weight: 600;
+
+  color: #4da3ff;
+
+  margin-bottom: .3rem;
+
+}
+
+
+/* Empresa en modo claro */
+
+[data-bs-theme="light"] .company {
+
+  color: #7c3aed;
+
+}
+
+
+/* Fecha + ubicación */
+
+.metadata {
+
+  display: block;
+
+  font-size: .9rem;
+
+  opacity: .7;
+
+  margin-bottom: 1rem;
+
+}
+
+
+/* Lista */
+
+.timeline-content ul {
+
+  margin-top: .5rem;
+
+  padding-left: 1.2rem;
+
+  line-height: 1.7;
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+
+  .experience-section {
+
+
+    display: block;
+
+
+    margin: 3rem 1rem;
+
+
+  }
+
+
+
+  .experience-title h2 {
+
+
+    position: static;
+
+
+    margin-bottom: 2rem;
+
+
+  }
+
+
+
+  .timeline {
+
+
+    padding-left: 2.5rem;
+
+
+  }
+
+
+
+  .timeline-item {
+
+
+    padding-bottom: 2.5rem;
+
+
+  }
+
+
+
+  .timeline-marker {
+
+
+    left: -2rem;
+
+
+  }
+
+
+
+}
+
+.contact-section {
+
+  max-width: 800px;
+
+  margin: 5rem auto 3rem;
+
+  text-align: center;
+
+}
+
+
+.contact-links {
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:2rem;
+
+  margin-top:2rem;
+
+  flex-wrap:wrap;
+
+}
+
+
+.contact-links a {
+
+  text-decoration:none;
+
+  font-weight:600;
+
+}
+
+/* Skills grid / pills */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.skills-grid code {
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85em;
+  font-weight: 500;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background-color: color-mix(in srgb, var(--bs-primary) 15%, transparent);
+  color: var(--bs-primary);
+  border: 1px solid color-mix(in srgb, var(--bs-primary) 35%, transparent);
+}
+
+.skills-grid code:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  background-color: color-mix(in srgb, var(--bs-primary) 25%, transparent);
+}
+
+.skills-grid code {
+  background-color: rgba(44, 62, 80, 0.12); /* fallback fijo */
+  color: var(--bs-primary);
+  border: 1px solid rgba(44, 62, 80, 0.3);
+  /* Overrides modernos si el navegador soporta color-mix */
+  background-color: color-mix(in srgb, var(--bs-primary) 15%, transparent);
+  border-color: color-mix(in srgb, var(--bs-primary) 35%, transparent);
+}
+
+.subproject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.subproject-card {
+  border: 1px solid color-mix(in srgb, var(--bs-primary) 25%, transparent);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  background-color: color-mix(in srgb, var(--bs-primary) 6%, transparent);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.subproject-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.subproject-card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.subproject-card code {
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.78em;
+  font-weight: 500;
+  font-family: inherit;
+  white-space: nowrap;
+  margin-right: 0.3rem;
+  background-color: color-mix(in srgb, var(--bs-primary) 15%, transparent);
+  color: var(--bs-primary);
+  border: 1px solid color-mix(in srgb, var(--bs-primary) 35%, transparent);
+}

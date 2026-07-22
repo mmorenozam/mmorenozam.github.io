@@ -2,6 +2,7 @@ library(lme4)
 library(lmerTest)
 library(dplyr)
 library(emmeans)
+library(ggplot2)
 
 simulate_and_test <- function(n_trials, 
                               n_blocks = 3, 
@@ -13,10 +14,10 @@ simulate_and_test <- function(n_trials,
                                 Treatment_3 = 3,
                                 Treatment_4 = 5
                               ),
-                              trial_sd = 10, 
-                              block_sd = 2.5,
-                              gxe_sd = 2, 
-                              residual_sd = 5) {
+                              trial_sd      = 10,
+                              block_sd      = 2,
+                              gxe_sd        = 3,
+                              residual_sd   = 4) {
   
   design_data <- expand.grid(
     Trial     = factor(1:n_trials),
@@ -80,14 +81,30 @@ simulate_and_test <- function(n_trials,
 }
 
 set.seed(624)
-n_trials_grid <- c(3, 5, 10, 20, 30, 50, 70, 90)
-n_reps <- 250
+n_trials_grid <- c(3, 10, 20, 30, 40, 50)
+n_reps <- 20
 
 power_results <- lapply(n_trials_grid, function(nt) {
   pvals <- unlist(replicate(n_reps, simulate_and_test(n_trials = nt)))
   data.frame(n_trials = nt, power = mean(pvals < 0.05, na.rm = TRUE))
 })
 power_df <- do.call(rbind, power_results)
+
+p2 <- ggplot(power_df, aes(x = n_trials, y = power)) +
+  geom_hline(yintercept = 0.8, linetype = "dashed", color = "grey40") +
+  geom_line(color = "#2c7fb8", linewidth = 1) +
+  geom_point(color = "#2c7fb8", size = 2.5) +
+  annotate("text", x = max(power_df$n_trials), y = 0.8, label = "80% power",
+           vjust = -0.6, hjust = 1, size = 3.2, color = "grey40") +
+  scale_y_continuous(labels = scales::percent, limits = c(0, 1)) +
+  labs(
+    title = "Empirical Power to Detect a 5% Yield Improvement",
+    subtitle = "Dunnett's test, Treatment 4 vs. reference, alpha = 0.05",
+    x = "Number of trials", y = "Power"
+  ) +
+  theme_bw()
+
+p2
 
 write.csv(power_df, here::here("projects/bayesian-superiority-rcbd/data/power_df.csv"), row.names = F)
 
