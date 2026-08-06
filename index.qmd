@@ -36,7 +36,9 @@ My background includes four years supporting R\&D projects at Bayer Crop Science
 
 Building on this foundation, **I'm now focused on clinical biostatistics and pharmacometrics, and I'm actively pursuing further training in model-informed drug development (MIDD)** to complement my quantitative background.
 
-This website serves as a portfolio of my professional work, publications, technical projects, and educational activities. Whether you're a recruiter, collaborator, or fellow data enthusiast, I hope you find something useful here. Thanks for stopping by!
+This website serves as a portfolio of my professional work, publications, technical projects, and educational activities. Whether you're a recruiter, collaborator, or fellow data enthusiast, I hope you find something useful here. Thanks for stopping by![^1]
+
+[^1] Page last updated on 07.08.2026
 
 :::
 
