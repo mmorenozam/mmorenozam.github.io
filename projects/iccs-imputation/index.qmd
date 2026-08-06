@@ -1226,10 +1226,7 @@ modelo_embedding <- st$SentenceTransformer(
   "all-MiniLM-L6-v2"
 )
 
-
-
 # cosine similarity
-
 
 cosine_similarity <- function(a, b){
   
@@ -1244,8 +1241,6 @@ cosine_similarity <- function(a, b){
   
   sim
 }
-
-
 
 # imputation with zero-shot embeddings
 
@@ -1270,13 +1265,11 @@ embedding_iccs_impute <- function(
     emb_catalogo
   )
   
-  
   mejor_indice <- apply(
     similitudes,
     1,
     which.max
   )
-  
   
   mejor_score <- apply(
     similitudes,
@@ -1285,14 +1278,11 @@ embedding_iccs_impute <- function(
   )
   
   resultado <- tibble(
-    
     presunta_infraccion = categorias_huerfanas,
-    
     mejor_match_decode =
       decode_iccs$decode_iccs[
         mejor_indice
       ],
-    
     codigo_asignado =
       ifelse(
         mejor_score >= threshold,
@@ -1301,15 +1291,11 @@ embedding_iccs_impute <- function(
         ],
         NA_character_
       ),
-    
     similitud = mejor_score,
-    
     requiere_revision_manual =
       mejor_score < threshold
   )
-  
   resultado
-  
 }
 
 resultado_embedding <- embedding_iccs_impute(
