@@ -2,7 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
-
 /.quarto/
 /projects/bayesian-superiority-rcbd/noupload
 /projects/bayesian-superiority-rcbd/R
+/projects/drafts
+/projects/iccs-imputation/R_noupload
+/projects/iccs-imputation/model_noupload
+.RDataTmp
+.RDataTmp1
