@@ -10,3 +10,5 @@
 /projects/iccs-imputation/model_noupload
 .RDataTmp
 .RDataTmp1
+_freeze/
+_site/
