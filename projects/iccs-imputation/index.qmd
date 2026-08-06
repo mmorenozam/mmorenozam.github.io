@@ -2,7 +2,7 @@
 title: "Chasing the Missing 11.7%: Geospatial QC, Machine Learning, and Other Demons in Ecuador's Crime Data"
 description: "Cleaning, geo-validating, and machine-learning my way through Ecuador's messiest crime dataset to recover 67.6% of its missing ICCS codes."
 image: thumbnail.png
-date: "2026-08-15"
+date: "2026-08-07"
 format:
   html: 
     code-fold: show
