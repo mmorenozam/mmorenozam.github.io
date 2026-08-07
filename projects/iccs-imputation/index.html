@@ -786,7 +786,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(report, <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>DETERMINISM CHECK - 2026-08-06 23:52:25.976749
+<pre><code>DETERMINISM CHECK - 2026-08-07 05:17:01.383224
 =====================================================
 
 Total records in Quito: 59903
@@ -911,7 +911,7 @@ CONCLUSION:
 <span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(report, <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>DETERMINISM CHECK (Updated conclusion) - 2026-08-06 23:52:26.005865
+<pre><code>DETERMINISM CHECK (Updated conclusion) - 2026-08-07 05:17:01.408927
 =====================================================
 
 Total records: 59903
@@ -1221,22 +1221,21 @@ HOMBRE  MUJER
 <span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">hora =</span> <span class="fu">hour</span>(fecha_hora),</span>
 <span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">dia =</span> <span class="fu">recode</span>(<span class="fu">weekdays</span>(fecha_detencion_aprehension), <span class="sc">!!!</span>dias)) <span class="sc">|&gt;</span></span>
 <span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convierte "SIN_DATO" a NA y extrae el número si viene como "23 AÑOS"</span></span>
-<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">edad_num =</span> <span class="fu">as.numeric</span>(edad),</span>
-<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Grupos etarios</span></span>
-<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">edad_grupo =</span> <span class="fu">case_when</span>(</span>
-<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>(edad_num) <span class="sc">~</span> <span class="st">"SIN_DATO"</span>,</span>
-<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>      edad_num <span class="sc">&lt;</span> <span class="dv">18</span>   <span class="sc">~</span> <span class="st">"Menor de edad"</span>,</span>
-<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>      edad_num <span class="sc">&lt;</span> <span class="dv">30</span>   <span class="sc">~</span> <span class="st">"18-29"</span>,</span>
-<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>      edad_num <span class="sc">&lt;</span> <span class="dv">45</span>   <span class="sc">~</span> <span class="st">"30-44"</span>,</span>
-<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>      edad_num <span class="sc">&lt;</span> <span class="dv">60</span>   <span class="sc">~</span> <span class="st">"45-59"</span>,</span>
-<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span>            <span class="sc">~</span> <span class="st">"60+"</span></span>
-<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
-<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_count</span>(codigo_iccs, <span class="at">name =</span> <span class="st">"n_iccs"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_iccs <span class="sc">&gt;=</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
-<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n_iccs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">edad_num =</span> <span class="fu">as.numeric</span>(edad),</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Grupos etarios</span></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">edad_grupo =</span> <span class="fu">case_when</span>(</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">is.na</span>(edad_num) <span class="sc">~</span> <span class="st">"SIN_DATO"</span>,</span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>      edad_num <span class="sc">&lt;</span> <span class="dv">18</span>   <span class="sc">~</span> <span class="st">"Menor de edad"</span>,</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>      edad_num <span class="sc">&lt;</span> <span class="dv">30</span>   <span class="sc">~</span> <span class="st">"18-29"</span>,</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>      edad_num <span class="sc">&lt;</span> <span class="dv">45</span>   <span class="sc">~</span> <span class="st">"30-44"</span>,</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>      edad_num <span class="sc">&lt;</span> <span class="dv">60</span>   <span class="sc">~</span> <span class="st">"45-59"</span>,</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span>            <span class="sc">~</span> <span class="st">"60+"</span></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_count</span>(codigo_iccs, <span class="at">name =</span> <span class="st">"n_iccs"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(n_iccs <span class="sc">&gt;=</span> <span class="dv">10</span>) <span class="sc">|&gt;</span></span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>n_iccs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>Here I create a new variable, <code>fecha_hora</code>, by combining the date and time of the event; another variable, <code>year</code>, to extract the year of the event; a variable <code>hora</code>, which extracts the hour from <code>fecha_hora</code>; and finally a variable called <code>dia</code>, which extracts the day of the event, formatted in Spanish.</p>
@@ -1700,69 +1699,32 @@ HOMBRE  MUJER
 <span id="cb47-53"><a href="#cb47-53" aria-hidden="true" tabindex="-1"></a>resultado_zeroshot <span class="ot">&lt;-</span> <span class="fu">zeroshot_impute</span>(categorias_huerfanas, catalogo)</span>
 <span id="cb47-54"><a href="#cb47-54" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(resultado_zeroshot) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
 <span id="cb47-55"><a href="#cb47-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-56"><a href="#cb47-56" aria-hidden="true" tabindex="-1"></a>resultado_zeroshot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb47-56"><a href="#cb47-56" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(resultado_zeroshot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>                                                                                                   presunta_infraccion
-1                                                        DELITOS QUE COMPROMETEN LA SEGURIDAD EXTERIOR DE LA REPUBLICA
-2                                                                                                                OTROS
-3                                                                                  CONSERVACION INDEBIDA DE EXPLOSIVOS
-4                                                                                                               DELITO
-5                                                                                DELITOS CONTRA LA LIBERTAD INDIVIDUAL
-6                                                                                                             DEL ROBO
-7                                                                                                          PREVARICATO
-8                                                                                DELITOS CONTRA LOS PRESOS O DETENIDOS
-9                                                                               DELITO RELATIVO A LA TRATA DE PERSONAS
-10                                                                                                        INTIMIDACIÓN
-11                                         CIERTOS DELITOS PROMOVIDOS O EJECUTADOS POR MEDIO DE ACTIVIDADES TURISTICAS
-12                                                                                                 ABANDONO A PERSONAS
-13                                                                                                           DEL HURTO
-14                            FALSIFICACION DE MONEDAS, BILLETES DE BANCO, TITULOS AL PORTADOR Y DOCUMENTOS DE CREDITO
-15                                                       DELITOS RELATIVOS A LA EXTRACCION Y TRAFICO ILEGAL DE ORGANOS
-16 DELITOS CONTRA LA ACTIVIDAD HIDROCARBURÍFERA, DERIVADOS DE HIDROCARBUROS, GAS LICUADO DE PETRÓLEO Y BIOCOMBUSTIBLES
-17                                                                                        DELITOS CULPOSOS DE TRÁNSITO
-18    DE LA PROTECCIÓN CONTRA EL MALTRATO, ABUSO, EXPLOTACIÓN SEXUAL, TRÁFICO Y PÉRDIDA DE NIÑOS, NIÑAS Y ADOLESCENTES
-19                                                                                                           ORDENANZA
-                                                    mejor_match_decode
-1                                 Actos contra la salud y la seguridad
-2                                       Otros actos contra la libertad
-3                                        Tráfico de armas y explosivos
-4                                                Homicidio intencional
-5                                             Actos contra la libertad
-6                                                                 Robo
-7                                                Homicidio intencional
-8                                                Homicidio intencional
-9                                                    Trata de personas
-10                                               Homicidio intencional
-11 Otros actos relacionados con las actividades de un grupo terrorista
-12                                                   Trata de personas
-13                                                               Hurto
-14                                Actos de falsificación de documentos
-15                Trata de personas con fines de extracción de órganos
-16                                               Homicidio intencional
-17                                    Homicidio por tránsito vehicular
-18                                            Esclavitud y explotación
-19                                               Homicidio intencional
-   codigo_asignado  similitud requiere_revision_manual
-1             0902 0.14285714                    FALSE
-2            02029 0.33333333                    FALSE
-3            09012 0.20000000                    FALSE
-4             0101 0.00000000                    FALSE
-5             0202 0.33333333                    FALSE
-6             0401 1.00000000                    FALSE
-7             0101 0.00000000                    FALSE
-8             0101 0.00000000                    FALSE
-9             0204 1.00000000                    FALSE
-10            0101 0.00000000                    FALSE
-11           09069 0.08333333                    FALSE
-12            0204 0.33333333                    FALSE
-13            0502 1.00000000                    FALSE
-14           07023 0.22222222                    FALSE
-15           02043 0.22222222                    FALSE
-16            0101 0.00000000                    FALSE
-17          010321 0.25000000                    FALSE
-18            0203 0.09090909                    FALSE
-19            0101 0.00000000                    FALSE</code></pre>
+<pre><code># A tibble: 19 × 5
+   presunta_infraccion              mejor_match_decode codigo_asignado similitud
+   &lt;chr&gt;                            &lt;chr&gt;              &lt;chr&gt;               &lt;dbl&gt;
+ 1 DELITOS QUE COMPROMETEN LA SEGU… Actos contra la s… 0902               0.143 
+ 2 OTROS                            Otros actos contr… 02029              0.333 
+ 3 CONSERVACION INDEBIDA DE EXPLOS… Tráfico de armas … 09012              0.2   
+ 4 DELITO                           Homicidio intenci… 0101               0     
+ 5 DELITOS CONTRA LA LIBERTAD INDI… Actos contra la l… 0202               0.333 
+ 6 DEL ROBO                         Robo               0401               1     
+ 7 PREVARICATO                      Homicidio intenci… 0101               0     
+ 8 DELITOS CONTRA LOS PRESOS O DET… Homicidio intenci… 0101               0     
+ 9 DELITO RELATIVO A LA TRATA DE P… Trata de personas  0204               1     
+10 INTIMIDACIÓN                     Homicidio intenci… 0101               0     
+11 CIERTOS DELITOS PROMOVIDOS O EJ… Otros actos relac… 09069              0.0833
+12 ABANDONO A PERSONAS              Trata de personas  0204               0.333 
+13 DEL HURTO                        Hurto              0502               1     
+14 FALSIFICACION DE MONEDAS, BILLE… Actos de falsific… 07023              0.222 
+15 DELITOS RELATIVOS A LA EXTRACCI… Trata de personas… 02043              0.222 
+16 DELITOS CONTRA LA ACTIVIDAD HID… Homicidio intenci… 0101               0     
+17 DELITOS CULPOSOS DE TRÁNSITO     Homicidio por trá… 010321             0.25  
+18 DE LA PROTECCIÓN CONTRA EL MALT… Esclavitud y expl… 0203               0.0909
+19 ORDENANZA                        Homicidio intenci… 0101               0     
+# ℹ 1 more variable: requiere_revision_manual &lt;lgl&gt;</code></pre>
 </div>
 </div>
 <p>As expected, some classes are assigned an ICCS code that describes them reasonably well (for example, “DELITOS CONTRA LA LIBERTAD INDIVIDUAL” is matched with “Actos contra la libertad”), but others are way off, such as “PREVARICATO” (in English, prevarication), which is matched with “Homicidio intencional” (in English, intentional homicide).</p>
@@ -1893,7 +1855,67 @@ HOMBRE  MUJER
 # ℹ 1 more variable: requiere_revision_manual &lt;lgl&gt;</code></pre>
 </div>
 </div>
-<p>Then, finally, with these two results and my best possible knowledge of Ecuadorian law, I will assign the codes to the orphan classes and finish my data for the upcoming dashboard I have in mind. If you made until this point, please feel free to finish that task, put all data together and play around with this nice example of official records about crime.</p>
+<p>Then, finally, with these two results and my best common sense rather than my limited knowledge of Ecuadorian law, after exporting both result tables above into excel, I assigned the codes to the orphan classes:</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Hide the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>no_resoluble_curada <span class="ot">&lt;-</span> no_resoluble_por_modelo <span class="sc">|&gt;</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">codigo_iccs =</span> <span class="fu">case_when</span>(presunta_infraccion <span class="sc">==</span> <span class="st">"DELITOS QUE COMPROMETEN LA SEGURIDAD EXTERIOR DE LA REPUBLICA"</span> <span class="sc">~</span> <span class="st">"0909"</span>,</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"OTROS"</span> <span class="sc">~</span> <span class="st">"1109"</span>,</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"CONSERVACION INDEBIDA DE EXPLOSIVOS"</span> <span class="sc">~</span> <span class="st">"09012"</span>,</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"DELITO"</span> <span class="sc">~</span> <span class="st">"9999"</span>, <span class="co"># made up code to aggregate events not classified in ICCS</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"DELITOS CONTRA LA LIBERTAD INDIVIDUAL"</span> <span class="sc">~</span> <span class="st">"0202"</span>,</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"DEL ROBO"</span> <span class="sc">~</span> <span class="st">"0401"</span>,</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"PREVARICATO"</span> <span class="sc">~</span> <span class="st">"9999"</span>,</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"DELITOS CONTRA LOS PRESOS O DETENIDOS"</span> <span class="sc">~</span> <span class="st">"9999"</span>,</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"DELITO RELATIVO A LA TRATA DE PERSONAS"</span> <span class="sc">~</span> <span class="st">"0204"</span>,</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"INTIMIDACIÓN"</span> <span class="sc">~</span> <span class="st">"08063"</span>,</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"CIERTOS DELITOS PROMOVIDOS O EJECUTADOS POR MEDIO DE ACTIVIDADES TURISTICAS"</span> <span class="sc">~</span> <span class="st">"9999"</span>,</span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"ABANDONO A PERSONAS"</span> <span class="sc">~</span> <span class="st">"9999"</span>,</span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"DEL HURTO"</span> <span class="sc">~</span> <span class="st">"0502"</span>,</span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"FALSIFICACION DE MONEDAS, BILLETES DE BANCO, TITULOS AL PORTADOR Y DOCUMENTOS DE CREDITO"</span> <span class="sc">~</span> <span class="st">"07023"</span>,</span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"DELITOS RELATIVOS A LA EXTRACCION Y TRAFICO ILEGAL DE ORGANOS"</span> <span class="sc">~</span> <span class="st">"02043"</span>,</span>
+<span id="cb51-17"><a href="#cb51-17" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"DELITOS CONTRA LA ACTIVIDAD HIDROCARBURÍFERA, DERIVADOS DE HIDROCARBUROS, GAS LICUADO DE PETRÓLEO Y BIOCOMBUSTIBLES"</span> <span class="sc">~</span> <span class="st">"9999"</span>,</span>
+<span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"DELITOS CULPOSOS DE TRÁNSITO"</span> <span class="sc">~</span> <span class="st">"010321"</span>,</span>
+<span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"DE LA PROTECCIÓN CONTRA EL MALTRATO, ABUSO, EXPLOTACIÓN SEXUAL, TRÁFICO Y PÉRDIDA DE NIÑOS, NIÑAS Y ADOLESCENTES"</span> <span class="sc">~</span> <span class="st">"03022"</span>,</span>
+<span id="cb51-20"><a href="#cb51-20" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"ORDENANZA"</span> <span class="sc">~</span> <span class="st">"9999"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>After completing this final manual curation step, I combined the three imputed subsets with the Quito records that already contained valid ICCS codes. With that, the dataset was finally ready to power the crime dashboard.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Hide the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lookup resolved data:</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>lookup_final <span class="ot">&lt;-</span> lookup_pred <span class="sc">|&gt;</span> </span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">imputada =</span> <span class="st">"lookup"</span>)</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="co"># model solvable data:</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>apren_final <span class="ot">&lt;-</span> apren_pred <span class="sc">|&gt;</span></span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">imputada =</span> <span class="st">"RF"</span>)</span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a><span class="co"># non-model solvable data:</span></span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>no_resoluble_curada_final <span class="ot">&lt;-</span> no_resoluble_curada <span class="sc">|&gt;</span></span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">imputada =</span> <span class="st">"Manual"</span>)</span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a><span class="co"># complete Quito data:</span></span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>apren_completa <span class="ot">&lt;-</span> apren_validas <span class="sc">|&gt;</span></span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">imputada =</span> <span class="st">"No"</span>,</span>
+<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">codigo_iccs =</span> <span class="fu">case_when</span>(presunta_infraccion <span class="sc">==</span> <span class="st">"BOLETAS"</span> <span class="sc">~</span> <span class="st">"9999"</span>,</span>
+<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a>                                 presunta_infraccion <span class="sc">==</span> <span class="st">"APREMIO"</span> <span class="sc">~</span> <span class="st">"9999"</span>,</span>
+<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a>                                 T <span class="sc">~</span> codigo_iccs)) <span class="sc">|&gt;</span></span>
+<span id="cb52-23"><a href="#cb52-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(codigo_iccs))</span>
+<span id="cb52-24"><a href="#cb52-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-25"><a href="#cb52-25" aria-hidden="true" tabindex="-1"></a>consolidado_uio <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(lookup_final, apren_final, no_resoluble_curada_final, apren_completa) <span class="sc">|&gt;</span></span>
+<span id="cb52-26"><a href="#cb52-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>decode_iccs) <span class="sc">|&gt;</span></span>
+<span id="cb52-27"><a href="#cb52-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(catalogo, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"codigo_iccs"</span>))</span>
+<span id="cb52-28"><a href="#cb52-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-29"><a href="#cb52-29" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(consolidado_uio, here<span class="sc">::</span><span class="fu">here</span>(pay, <span class="st">"model_data/consolidado_uio.rds"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
