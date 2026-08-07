@@ -1213,31 +1213,19 @@ This table by itself is a good starting point for finishing the imputation throu
 
 library(reticulate)
 
-py_install(
-  c("sentence-transformers", "torch"),
-  pip = TRUE
-)
+py_install(c("sentence-transformers", "torch"), pip = TRUE)
 
 # load model
 st <- import("sentence_transformers")
 
-modelo_embedding <- st$SentenceTransformer(
-  "all-MiniLM-L6-v2"
-)
+modelo_embedding <- st$SentenceTransformer("all-MiniLM-L6-v2")
 
 # cosine similarity
 
 cosine_similarity <- function(a, b){
-  
   a <- as.matrix(a)
   b <- as.matrix(b)
-  
-  sim <- tcrossprod(a, b) /
-    (
-      sqrt(rowSums(a^2)) %*%
-        t(sqrt(rowSums(b^2)))
-    )
-  
+  sim <- tcrossprod(a, b) /(sqrt(rowSums(a^2)) %*% t(sqrt(rowSums(b^2))))
   sim
 }
 
@@ -1249,51 +1237,27 @@ embedding_iccs_impute <- function(
     modelo,
     threshold = 0.75){
   
-  emb_catalogo <- modelo$encode(
-    as.list(decode_iccs$decode_iccs),
-    normalize_embeddings = TRUE
-  )
+  emb_catalogo <- modelo$encode(as.list(decode_iccs$decode_iccs), normalize_embeddings = TRUE)
   
-  emb_huerfanas <- modelo$encode(
-    as.list(categorias_huerfanas),
-    normalize_embeddings = TRUE
-  )
+  emb_huerfanas <- modelo$encode(as.list(categorias_huerfanas), normalize_embeddings = TRUE)
   
-  similitudes <- cosine_similarity(
-    emb_huerfanas,
-    emb_catalogo
-  )
+  similitudes <- cosine_similarity(emb_huerfanas, emb_catalogo)
   
-  mejor_indice <- apply(
-    similitudes,
-    1,
-    which.max
-  )
+  mejor_indice <- apply(similitudes, 1, which.max)
   
-  mejor_score <- apply(
-    similitudes,
-    1,
-    max
-  )
+  mejor_score <- apply(similitudes, 1, max)
   
   resultado <- tibble(
     presunta_infraccion = categorias_huerfanas,
-    mejor_match_decode =
-      decode_iccs$decode_iccs[
-        mejor_indice
-      ],
+    mejor_match_decode = decode_iccs$decode_iccs[mejor_indice],
     codigo_asignado =
-      ifelse(
-        mejor_score >= threshold,
-        decode_iccs$codigo_iccs[
-          mejor_indice
-        ],
-        NA_character_
-      ),
+      ifelse(mejor_score >= threshold,
+             decode_iccs$codigo_iccs[mejor_indice],
+             NA_character_
+             ),
     similitud = mejor_score,
-    requiere_revision_manual =
-      mejor_score < threshold
-  )
+    requiere_revision_manual = mejor_score < threshold
+    )
   resultado
 }
 
