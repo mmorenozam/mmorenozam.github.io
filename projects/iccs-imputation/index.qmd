@@ -678,7 +678,6 @@ apren_train <- apren_train |>
          hora = hour(fecha_hora),
          dia = recode(weekdays(fecha_detencion_aprehension), !!!dias)) |>
   mutate(
-    # Convierte "SIN_DATO" a NA y extrae el número si viene como "23 AÑOS"
     edad_num = as.numeric(edad),
     
     # Grupos etarios
