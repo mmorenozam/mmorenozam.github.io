@@ -1199,7 +1199,7 @@ zeroshot_impute <- function(categorias_huerfanas, decode_iccs) {
 resultado_zeroshot <- zeroshot_impute(categorias_huerfanas, catalogo)
 row.names(resultado_zeroshot) <- NULL
 
-resultado_zeroshot
+tibble(resultado_zeroshot)
 ```
 
 As expected, some classes are assigned an ICCS code that describes them reasonably well (for example, "DELITOS CONTRA LA LIBERTAD INDIVIDUAL" is matched with "Actos contra la libertad"), but others are way off, such as "PREVARICATO" (in English, prevarication), which is matched with "Homicidio intencional" (in English, intentional homicide).
@@ -1320,9 +1320,80 @@ resultado_embedding <- readRDS(here::here(pay, "model_data/imputacion_embedding.
 
 resultado_embedding
 
+openxlsx::write.xlsx(resultado_embedding, here::here(pay, "model_data/embedding.xlsx"))
+openxlsx::write.xlsx(resultado_zeroshot, here::here(pay, "model_data/zeroshot.xlsx"))
+
 ```
 
-Then, finally, with these two results and my best possible knowledge of Ecuadorian law, I will assign the codes to the orphan classes and finish my data for the upcoming dashboard I have in mind. If you made until this point, please feel free to finish that task, put all data together and play around with this nice example of official records about crime.
+Then, finally, with these two results and my best common sense rather than my limited knowledge of Ecuadorian law, after exporting both result tables above into excel, I assigned the codes to the orphan classes:
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: true
+
+no_resoluble_curada <- no_resoluble_por_modelo |>
+  mutate(codigo_iccs = case_when(presunta_infraccion == "DELITOS QUE COMPROMETEN LA SEGURIDAD EXTERIOR DE LA REPUBLICA" ~ "0909",
+                                 presunta_infraccion == "OTROS" ~ "1109",
+                                 presunta_infraccion == "CONSERVACION INDEBIDA DE EXPLOSIVOS" ~ "09012",
+                                 presunta_infraccion == "DELITO" ~ "9999", # made up code to aggregate events not classified in ICCS
+                                 presunta_infraccion == "DELITOS CONTRA LA LIBERTAD INDIVIDUAL" ~ "0202",
+                                 presunta_infraccion == "DEL ROBO" ~ "0401",
+                                 presunta_infraccion == "PREVARICATO" ~ "9999",
+                                 presunta_infraccion == "DELITOS CONTRA LOS PRESOS O DETENIDOS" ~ "9999",
+                                 presunta_infraccion == "DELITO RELATIVO A LA TRATA DE PERSONAS" ~ "0204",
+                                 presunta_infraccion == "INTIMIDACIÓN" ~ "08063",
+                                 presunta_infraccion == "CIERTOS DELITOS PROMOVIDOS O EJECUTADOS POR MEDIO DE ACTIVIDADES TURISTICAS" ~ "9999",
+                                 presunta_infraccion == "ABANDONO A PERSONAS" ~ "9999",
+                                 presunta_infraccion == "DEL HURTO" ~ "0502",
+                                 presunta_infraccion == "FALSIFICACION DE MONEDAS, BILLETES DE BANCO, TITULOS AL PORTADOR Y DOCUMENTOS DE CREDITO" ~ "07023",
+                                 presunta_infraccion == "DELITOS RELATIVOS A LA EXTRACCION Y TRAFICO ILEGAL DE ORGANOS" ~ "02043",
+                                 presunta_infraccion == "DELITOS CONTRA LA ACTIVIDAD HIDROCARBURÍFERA, DERIVADOS DE HIDROCARBUROS, GAS LICUADO DE PETRÓLEO Y BIOCOMBUSTIBLES" ~ "9999",
+                                 presunta_infraccion == "DELITOS CULPOSOS DE TRÁNSITO" ~ "010321",
+                                 presunta_infraccion == "DE LA PROTECCIÓN CONTRA EL MALTRATO, ABUSO, EXPLOTACIÓN SEXUAL, TRÁFICO Y PÉRDIDA DE NIÑOS, NIÑAS Y ADOLESCENTES" ~ "03022",
+                                 presunta_infraccion == "ORDENANZA" ~ "9999"))
+```
+
+After completing this final manual curation step, I combined the three imputed subsets with the Quito records that already contained valid ICCS codes. With that, the dataset was finally ready to power the crime dashboard.
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+#| eval: true
+
+# lookup resolved data:
+
+lookup_final <- lookup_pred |> 
+  mutate(imputada = "lookup")
+
+# model solvable data:
+
+apren_final <- apren_pred |>
+  mutate(imputada = "RF")
+
+# non-model solvable data:
+
+no_resoluble_curada_final <- no_resoluble_curada |>
+  mutate(imputada = "Manual")
+
+# complete Quito data:
+
+apren_completa <- apren_validas |>
+  mutate(imputada = "No",
+         codigo_iccs = case_when(presunta_infraccion == "BOLETAS" ~ "9999",
+                                 presunta_infraccion == "APREMIO" ~ "9999",
+                                 T ~ codigo_iccs)) |>
+  filter(!is.na(codigo_iccs))
+
+consolidado_uio <- bind_rows(lookup_final, apren_final, no_resoluble_curada_final, apren_completa) |>
+  select(-decode_iccs) |>
+  left_join(catalogo, by = c("codigo_iccs"))
+
+saveRDS(consolidado_uio, here::here(pay, "model_data/consolidado_uio.rds"))
+
+```
 
 # Conclusion
 
