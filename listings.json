@@ -2,10 +2,10 @@
   {
     "listing": "/projects.html",
     "items": [
-      "/projects/cometa/index.html",
-      "/projects/bayesian-superiority-rcbd/index.html",
+      "/projects/crime-dashboard/index.html",
       "/projects/iccs-imputation/index.html",
-      "/projects/crime-dashboard/index.html"
+      "/projects/bayesian-superiority-rcbd/index.html",
+      "/projects/cometa/index.html"
     ]
   }
 ]
