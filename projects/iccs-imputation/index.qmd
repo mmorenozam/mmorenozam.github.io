@@ -445,7 +445,7 @@ Now that we've identified the need to filter out the orphan classes of one varia
 
 Still, it's worth checking whether we can simplify the complexity that any model will have to deal with later. As it turns out, some categories within certain variables won't necessarily appear in the prediction set at all. For instance, the class `"INTERSEXUAL"` is present in the `sexo` variable, but it disappears entirely once we filter down to only the rows with a missing `codigo_iccs`.
 
-For this, we will already start defining our training and prediction data sets. On the one hand, for the training set we will try to conserve as much information as we can. I mention this because, at this point, we already know that there are 21 `presunta_infraccion` categories with a good relationship to one or a few codes, which we are going to impute deterministically. However, leaving them out of the training set might reduce the accuracy we compute further on. Notice, then, how in the code below we only filter out from the training set (which is going to be the full dataset for the whole country) the classes of `presunta_infraccion` that are not resolvable by either determinism or a classification algorithm.
+For this, we will already start defining our training and prediction data sets. On the one hand, for the training set we will try to conserve as much information as we can. I mention this because, at this point, we already know that there are 21 `presunta_infraccion` categories with a good relationship to one or a few codes, which we are going to impute deterministically. However, leaving them out of the training set might reduce the accuracy we compute further on. Notice, then, how in the code below we only filter out from the training set (which is going to be the full dataset for the whole country) the classes of `presunta_infraccion` that are not by  a classification algorithm.
 
 
 ```{r}
@@ -456,8 +456,7 @@ For this, we will already start defining our training and prediction data sets. 
 
 apren_train <- apren_work_total |>
   filter(!is.na(codigo_iccs)) |>
-  filter(!presunta_infraccion %in% c(unique(no_resoluble_por_modelo$presunta_infraccion)))#,
-                                     #categorias_deterministas$presunta_infraccion))
+  filter(!presunta_infraccion %in% c(unique(no_resoluble_por_modelo$presunta_infraccion)))
 
 apren_pred <- apren_work |> 
   filter(is.na(codigo_iccs)) |> 
@@ -948,7 +947,6 @@ apren_train_mod2 <- apren_train |>
          presunta_infraccion) |>
   mutate(across(all_of(c("codigo_iccs",
                          "tipo",
-                         "hora",
                          "condicion",
                          "movilizacion",
                          "tipo_arma",

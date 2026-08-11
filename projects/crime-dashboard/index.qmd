@@ -1,0 +1,33 @@
+---
+title: "Homicidios y Detenciones en Quito -- A crime dashboard"
+description: "An end-to-end data project exploring homicide and arrest patterns in Quito through spatial analysis, missing-data imputation, statistical modeling, and an interactive Shiny dashboard."
+image: thumbnail.png
+date: "2026-08-11"
+format:
+  html: 
+    code-fold: show
+    code-summary: "Hide the code"
+categories: [R, Machine Learning, dashboard, AI, visualization, shiny]
+---
+
+
+## Homicidios y detenciones en Quito
+
+This project started with a fairly simple question: **what can we actually learn from administrative crime data once we start looking at it from a statistical and spatial perspective?**
+
+I worked with records of homicides and arrests from the Metropolitan District of Quito, combining data cleaning, spatial validation, missing-data imputation, classification, and interactive visualization into a single workflow. The final result is a Shiny dashboard that allows users to explore where and when these events occur, how they vary across parishes, and how raw case counts compare with population-adjusted incidence rates.
+
+One of the more interesting parts of the project turned out to be the missing ICCS classifications in the arrest data. Rather than simply dropping those records, I built an imputation workflow combining deterministic lookup rules, a Random Forest model, and a final manual curation step. I also used text similarity and embeddings to deal with categories that had no direct examples available for model training.
+
+The dashboard is the final step of that process, but the main purpose of this post is to document **how I got there**: the data preparation, quality checks, imputation strategy, model development, and a few of the compromises and limitations along the way.
+
+There is also something else worth mentioning. I was fairly skeptical about AI tools when they first became popular. I still think they need to be used with some caution, especially when working with data and statistical analysis, but this project changed my mind about how useful they can be as part of a real workflow. I used AI assistants throughout the development process to troubleshoot code, explore alternative approaches, improve the dashboard structure, and work through problems that would otherwise have required a lot of searching and trial and error. What would probably have taken me a week of spare-time work was condensed into a couple of days. The decisions, validation, and final curation were still mine, but having an AI assistant to bounce ideas off and help with the tedious parts made a surprisingly big difference.
+
+So, begrudgingly, I have to give credit where credit is due: **thanks, ChatGPT and Claude. You saved me a ridiculous amount of time on this one.**
+
+This is a personal project, built in my spare time, so it is not intended to be a definitive analysis of crime in Quito. Instead, it is an example of how I like to approach messy real-world data: understand where it comes from, question what is missing, make the assumptions explicit, and build something that lets people explore the results for themselves.
+
+**[Explore the interactive dashboard →](https://mauriciomorenozambrano-crime-dashboard.share.connect.posit.cloud/){target="_blank"}**
+
+**[Take a look of the Source Code →](https://github.com/mmorenozam/crime-dashboard){target="_blank"}**
+
