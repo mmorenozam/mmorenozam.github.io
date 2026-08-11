@@ -2,46 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mauricio-moreno.net/teaching.html</loc>
-    <lastmod>2026-08-07T05:35:26.614Z</lastmod>
+    <lastmod>2026-08-11T20:28:48.274Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/publications.html</loc>
-    <lastmod>2026-08-07T05:35:26.612Z</lastmod>
+    <lastmod>2026-08-11T20:28:48.272Z</lastmod>
   </url>
   <url>
-    <loc>https://mauricio-moreno.net/projects/cometa/index.html</loc>
-    <lastmod>2026-08-07T05:35:26.491Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricio-moreno.net/projects.html</loc>
-    <lastmod>2026-08-07T05:35:26.473Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricio-moreno.net/index.html</loc>
-    <lastmod>2026-08-07T05:35:26.473Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricio-moreno.net/certifications.html</loc>
-    <lastmod>2026-08-07T05:35:26.465Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricio-moreno.net/impressum.html</loc>
-    <lastmod>2026-08-07T05:35:26.473Z</lastmod>
-  </url>
-  <url>
-    <loc>https://mauricio-moreno.net/privacy.html</loc>
-    <lastmod>2026-08-07T05:35:26.473Z</lastmod>
+    <loc>https://mauricio-moreno.net/projects/crime-dashboard/index.html</loc>
+    <lastmod>2026-08-11T20:28:48.131Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/projects/bayesian-superiority-rcbd/index.html</loc>
-    <lastmod>2026-08-07T05:35:26.488Z</lastmod>
+    <lastmod>2026-08-11T20:28:48.121Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/privacy.html</loc>
+    <lastmod>2026-08-11T20:28:48.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/impressum.html</loc>
+    <lastmod>2026-08-11T20:28:48.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/certifications.html</loc>
+    <lastmod>2026-08-11T20:28:48.094Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/index.html</loc>
+    <lastmod>2026-08-11T20:28:48.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/projects.html</loc>
+    <lastmod>2026-08-11T20:28:48.103Z</lastmod>
+  </url>
+  <url>
+    <loc>https://mauricio-moreno.net/projects/cometa/index.html</loc>
+    <lastmod>2026-08-11T20:28:48.125Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/projects/iccs-imputation/index.html</loc>
-    <lastmod>2026-08-07T05:35:26.496Z</lastmod>
+    <lastmod>2026-08-11T20:28:48.132Z</lastmod>
   </url>
   <url>
     <loc>https://mauricio-moreno.net/skills.html</loc>
-    <lastmod>2026-08-07T05:35:26.614Z</lastmod>
+    <lastmod>2026-08-11T20:28:48.274Z</lastmod>
   </url>
 </urlset>

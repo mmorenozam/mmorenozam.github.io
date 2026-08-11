@@ -86,9 +86,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-59087801032b9d7d6b936d87f036086c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-a13a599ee22e0882143b2e40d165c63e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-59087801032b9d7d6b936d87f036086c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-189549ecd294ed9837df383a4b42e31c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-8a591ff59271d21f6a5d1e80b3747fb5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-189549ecd294ed9837df383a4b42e31c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -786,7 +786,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(report, <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>DETERMINISM CHECK - 2026-08-07 05:37:24.29903
+<pre><code>DETERMINISM CHECK - 2026-08-11 20:30:50.943383
 =====================================================
 
 Total records in Quito: 59903
@@ -911,7 +911,7 @@ CONCLUSION:
 <span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(report, <span class="at">collapse =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>DETERMINISM CHECK (Updated conclusion) - 2026-08-07 05:37:24.32043
+<pre><code>DETERMINISM CHECK (Updated conclusion) - 2026-08-11 20:30:50.968937
 =====================================================
 
 Total records: 59903
@@ -964,22 +964,21 @@ CONCLUSION:
 <h1>Dealing with the other predictors</h1>
 <p>Now that we’ve identified the need to filter out the orphan classes of one variable, it’s a good time to look a bit closer at the rest of the predictors we’ll use later. Unlike the section above, we shouldn’t expect major issues here, since these correspond to more commonly used metadata fields with far fewer classes (e.g., sex, type of weapon, condition, and so on).</p>
 <p>Still, it’s worth checking whether we can simplify the complexity that any model will have to deal with later. As it turns out, some categories within certain variables won’t necessarily appear in the prediction set at all. For instance, the class <code>"INTERSEXUAL"</code> is present in the <code>sexo</code> variable, but it disappears entirely once we filter down to only the rows with a missing <code>codigo_iccs</code>.</p>
-<p>For this, we will already start defining our training and prediction data sets. On the one hand, for the training set we will try to conserve as much information as we can. I mention this because, at this point, we already know that there are 21 <code>presunta_infraccion</code> categories with a good relationship to one or a few codes, which we are going to impute deterministically. However, leaving them out of the training set might reduce the accuracy we compute further on. Notice, then, how in the code below we only filter out from the training set (which is going to be the full dataset for the whole country) the classes of <code>presunta_infraccion</code> that are not resolvable by either determinism or a classification algorithm.</p>
+<p>For this, we will already start defining our training and prediction data sets. On the one hand, for the training set we will try to conserve as much information as we can. I mention this because, at this point, we already know that there are 21 <code>presunta_infraccion</code> categories with a good relationship to one or a few codes, which we are going to impute deterministically. However, leaving them out of the training set might reduce the accuracy we compute further on. Notice, then, how in the code below we only filter out from the training set (which is going to be the full dataset for the whole country) the classes of <code>presunta_infraccion</code> that are not by a classification algorithm.</p>
 <div class="cell">
 <details open="" class="code-fold">
 <summary>Hide the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>apren_train <span class="ot">&lt;-</span> apren_work_total <span class="sc">|&gt;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(codigo_iccs)) <span class="sc">|&gt;</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>presunta_infraccion <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fu">unique</span>(no_resoluble_por_modelo<span class="sc">$</span>presunta_infraccion)))<span class="co">#,</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>                                     <span class="co">#categorias_deterministas$presunta_infraccion))</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>apren_pred <span class="ot">&lt;-</span> apren_work <span class="sc">|&gt;</span> </span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(codigo_iccs)) <span class="sc">|&gt;</span> </span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>presunta_infraccion <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fu">unique</span>(no_resoluble_por_modelo<span class="sc">$</span>presunta_infraccion),</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>                                     categorias_deterministas<span class="sc">$</span>presunta_infraccion))</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">c</span>(<span class="st">"Training set: Number of records, variable sexo"</span>,</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">capture.output</span>(<span class="fu">print</span>(<span class="fu">table</span>(apren_train<span class="sc">$</span>sexo)))), <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>presunta_infraccion <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fu">unique</span>(no_resoluble_por_modelo<span class="sc">$</span>presunta_infraccion)))</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>apren_pred <span class="ot">&lt;-</span> apren_work <span class="sc">|&gt;</span> </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(codigo_iccs)) <span class="sc">|&gt;</span> </span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>presunta_infraccion <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fu">unique</span>(no_resoluble_por_modelo<span class="sc">$</span>presunta_infraccion),</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>                                     categorias_deterministas<span class="sc">$</span>presunta_infraccion))</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">c</span>(<span class="st">"Training set: Number of records, variable sexo"</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">capture.output</span>(<span class="fu">print</span>(<span class="fu">table</span>(apren_train<span class="sc">$</span>sexo)))), <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Training set: Number of records, variable sexo
@@ -1438,41 +1437,40 @@ HOMBRE  MUJER
 <span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>         presunta_infraccion) <span class="sc">|&gt;</span></span>
 <span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(<span class="fu">c</span>(<span class="st">"codigo_iccs"</span>,</span>
 <span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"tipo"</span>,</span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"hora"</span>,</span>
-<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"condicion"</span>,</span>
-<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"movilizacion"</span>,</span>
-<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"tipo_arma"</span>,</span>
-<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"clase_tipo_lugar"</span>,</span>
-<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"codigo_provincia"</span>,</span>
-<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"presunta_infraccion"</span>)), as.factor))</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"condicion"</span>,</span>
+<span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"movilizacion"</span>,</span>
+<span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"tipo_arma"</span>,</span>
+<span id="cb38-19"><a href="#cb38-19" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"clase_tipo_lugar"</span>,</span>
+<span id="cb38-20"><a href="#cb38-20" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"codigo_provincia"</span>,</span>
+<span id="cb38-21"><a href="#cb38-21" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"presunta_infraccion"</span>)), as.factor))</span>
+<span id="cb38-22"><a href="#cb38-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-23"><a href="#cb38-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1410</span>)</span>
-<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a>idx_val <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(apren_train_mod2<span class="sc">$</span>codigo_iccs, <span class="at">p =</span> <span class="fl">0.8</span>, <span class="at">list =</span> F)</span>
-<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a>train_set <span class="ot">&lt;-</span> apren_train_mod2[idx_val, ]</span>
-<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a>val_set <span class="ot">&lt;-</span> apren_train_mod2[<span class="sc">-</span>idx_val, ]</span>
-<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a>modelo_rf3 <span class="ot">&lt;-</span> <span class="fu">ranger</span>(</span>
-<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a>  codigo_iccs <span class="sc">~</span> .,</span>
-<span id="cb38-33"><a href="#cb38-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> train_set,  </span>
-<span id="cb38-34"><a href="#cb38-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">num.trees =</span> <span class="dv">1000</span>, </span>
-<span id="cb38-35"><a href="#cb38-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">importance =</span> <span class="st">"permutation"</span>,</span>
-<span id="cb38-36"><a href="#cb38-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">1460</span>,</span>
-<span id="cb38-37"><a href="#cb38-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">num.threads =</span> <span class="dv">6</span></span>
-<span id="cb38-38"><a href="#cb38-38" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb38-39"><a href="#cb38-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-40"><a href="#cb38-40" aria-hidden="true" tabindex="-1"></a>imp_rf3 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb38-41"><a href="#cb38-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable =</span> <span class="fu">names</span>(modelo_rf3<span class="sc">$</span>variable.importance),</span>
-<span id="cb38-42"><a href="#cb38-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">importance =</span> modelo_rf3<span class="sc">$</span>variable.importance</span>
-<span id="cb38-43"><a href="#cb38-43" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
-<span id="cb38-44"><a href="#cb38-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(importance))</span>
-<span id="cb38-45"><a href="#cb38-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-46"><a href="#cb38-46" aria-hidden="true" tabindex="-1"></a>preds_rf3 <span class="ot">&lt;-</span> <span class="fu">predict</span>(modelo_rf3, <span class="at">data =</span> val_set)</span>
-<span id="cb38-47"><a href="#cb38-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-48"><a href="#cb38-48" aria-hidden="true" tabindex="-1"></a>cm_rf3 <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(preds_rf3<span class="sc">$</span>predictions, val_set<span class="sc">$</span>codigo_iccs)</span>
-<span id="cb38-49"><a href="#cb38-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-50"><a href="#cb38-50" aria-hidden="true" tabindex="-1"></a>imp_rf3 <span class="co"># random forest with 1000 trees and 9 predictors with importance larger than 0.017</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1410</span>)</span>
+<span id="cb38-25"><a href="#cb38-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-26"><a href="#cb38-26" aria-hidden="true" tabindex="-1"></a>idx_val <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(apren_train_mod2<span class="sc">$</span>codigo_iccs, <span class="at">p =</span> <span class="fl">0.8</span>, <span class="at">list =</span> F)</span>
+<span id="cb38-27"><a href="#cb38-27" aria-hidden="true" tabindex="-1"></a>train_set <span class="ot">&lt;-</span> apren_train_mod2[idx_val, ]</span>
+<span id="cb38-28"><a href="#cb38-28" aria-hidden="true" tabindex="-1"></a>val_set <span class="ot">&lt;-</span> apren_train_mod2[<span class="sc">-</span>idx_val, ]</span>
+<span id="cb38-29"><a href="#cb38-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-30"><a href="#cb38-30" aria-hidden="true" tabindex="-1"></a>modelo_rf3 <span class="ot">&lt;-</span> <span class="fu">ranger</span>(</span>
+<span id="cb38-31"><a href="#cb38-31" aria-hidden="true" tabindex="-1"></a>  codigo_iccs <span class="sc">~</span> .,</span>
+<span id="cb38-32"><a href="#cb38-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> train_set,  </span>
+<span id="cb38-33"><a href="#cb38-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">num.trees =</span> <span class="dv">1000</span>, </span>
+<span id="cb38-34"><a href="#cb38-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">importance =</span> <span class="st">"permutation"</span>,</span>
+<span id="cb38-35"><a href="#cb38-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">seed =</span> <span class="dv">1460</span>,</span>
+<span id="cb38-36"><a href="#cb38-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">num.threads =</span> <span class="dv">6</span></span>
+<span id="cb38-37"><a href="#cb38-37" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-38"><a href="#cb38-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-39"><a href="#cb38-39" aria-hidden="true" tabindex="-1"></a>imp_rf3 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb38-40"><a href="#cb38-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">variable =</span> <span class="fu">names</span>(modelo_rf3<span class="sc">$</span>variable.importance),</span>
+<span id="cb38-41"><a href="#cb38-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">importance =</span> modelo_rf3<span class="sc">$</span>variable.importance</span>
+<span id="cb38-42"><a href="#cb38-42" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb38-43"><a href="#cb38-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(importance))</span>
+<span id="cb38-44"><a href="#cb38-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-45"><a href="#cb38-45" aria-hidden="true" tabindex="-1"></a>preds_rf3 <span class="ot">&lt;-</span> <span class="fu">predict</span>(modelo_rf3, <span class="at">data =</span> val_set)</span>
+<span id="cb38-46"><a href="#cb38-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-47"><a href="#cb38-47" aria-hidden="true" tabindex="-1"></a>cm_rf3 <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(preds_rf3<span class="sc">$</span>predictions, val_set<span class="sc">$</span>codigo_iccs)</span>
+<span id="cb38-48"><a href="#cb38-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-49"><a href="#cb38-49" aria-hidden="true" tabindex="-1"></a>imp_rf3 <span class="co"># random forest with 1000 trees and 9 predictors with importance larger than 0.017</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <div class="cell">
