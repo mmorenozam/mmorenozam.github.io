@@ -4,7 +4,7 @@ listing:
   contents: projects
     # - "projects/*/*.qmd"
   type: grid
-  sort: "date asc"
+  sort: "date desc"
   sort-ui: true
   filter-ui: false
   categories: false
