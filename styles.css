@@ -87,6 +87,11 @@
 
   position: relative;
 
+  /* Distancia del riel (línea + círculo) al borde izquierdo del contenido.
+     Un único valor compartido por la línea y el marcador: así nunca
+     pueden desalinearse entre breakpoints. */
+  --tl-rail: 2rem;
+
   padding-left: 3rem;
 
 }
@@ -111,7 +116,9 @@
 
   position: absolute;
 
-  left: -2rem;
+  left: calc(-1 * var(--tl-rail));
+
+  transform: translateX(-50%);
 
   top: 1.15rem;
 
@@ -141,7 +148,9 @@
 
   position: absolute;
 
-  left: -2.48rem;
+  left: calc(-1 * var(--tl-rail));
+
+  transform: translateX(-50%);
 
   top: 0.95rem;
 
@@ -286,7 +295,9 @@
   .timeline {
 
 
-    padding-left: 2.5rem;
+    --tl-rail: 1.4rem;
+
+    padding-left: 2.1rem;
 
 
   }
@@ -296,7 +307,7 @@
   .timeline-item {
 
 
-    padding-bottom: 2.5rem;
+    padding-bottom: 2.25rem;
 
 
   }
@@ -306,7 +317,9 @@
   .timeline-marker {
 
 
-    left: -2rem;
+    width: 14px;
+
+    height: 14px;
 
 
   }
